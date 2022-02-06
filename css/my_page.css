@@ -263,10 +263,8 @@ html, body{
     height: 40px;
     width: 40px;
     border-radius: 20px;
-  }
-  
-  #gotop:hover {
-    background-color: #555;
+    justify-content: center;
+    align-items: center;
   }
 
   footer {
