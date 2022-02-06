@@ -254,6 +254,7 @@ html, body{
     right: 30px;
     z-index: 99;
     font-size: 18px;
+    text-align: center;
     border: none;
     outline: none;
     background-color: orangered;
