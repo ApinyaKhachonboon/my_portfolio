@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>เกมกระต่ายกระโดด (Ev12)</h3>  
+        <img src="img/EV12/ClassDiagram.jpg" alt="">
+        <h3>Class diagram</h3>
+        <img src="img/EV12/ev12_p1.PNG" alt="">
+        <h5>Class EV12</h5>
+        <p> - ใช้แสดงผลภาพทั้ง score และ Class starBG, Rabbit, Bell เพื่อให้เกมดำเนินไปจนจบเกมจะมี Method jump() ในการควบคุมการกระโดดของกระต่าย</p>
+        <h5>Class Rabbit</h5>
+        <p> - จะมี Method ไว้ใช้ควบคุมการเคลื่อนไหว มี Method get และ set ไว้ระบุตำแหน่งและ ปรับตำแหน่งตามการเคลื่อนไหวของ mouse</p>
+        <h5>Class Bell</h5>
+        <p> - Bell หรือ กระดิ่ง จะทำหน้าที่ร่วงลงมาเรื่อยๆ จนกว่าจะถึงพื้นหรือ สัมผัสโดนตัวกระต่าย ซึ่งเมื่อกระดิ่งตกหรือโดนตัวกระต่ายแล้วกระดิ่งจะ เกิดใหม่ด้านบนและ random ตำแหน่งการเกิด</p>
+        <h5>Class CheckHit</h5>
+        <p> - Class Bell จะทำการเรียก Class นี้เพื่อตรวจสอบการชนโดนใช้สูตรของพิทากอรัส</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>Load Balancing</h3>
+        <p>Load Balancing คือ บริการจาก Amazon  มาช่วยไม่ให้เครื่อง EC2 รับภาระมากเกินไปโดยการสลับเครื่องไปมา โดยเราจะมาทดลองใช้ ขั้นตอนแรกเราจะทำการสร้าง EC2 จาก image มาก่อนอีก 1 เครื่องแต่จะเปลี่ยน subnet ให้เป็น 1b แทน ต่อมาให้ไปที่ load balancer สำหรับ EC2 กด create ต่อมาเลือกเป็น HTTP ตามรูป</p>
+        <img src="img/T702/load_balacer/load1.PNG" alt="">
+        <p>ต่อมาให้ config ใส่ชื่อ, VPC และ subnet ที่ต้องการเสร็จแล้วกด next ตามรูป</p>
+        <img src="img/T702/load_balacer/load2.PNG" alt="">
+        <p>กด next ไปจนกระทั่งตั้งชื่อ target group เสร็จแล้วกด next</p>
+        <img src="img/T702/load_balacer/load3.PNG" alt="">
+        <p>ต่อมาให้เลือกเครื่องที่ต้องการสลับเลือกเสร็จให้กด Add to registered เสร็จแล้วกด next ตรวจสอบความเรียบร้อยและ กด create</p>
+        <img src="img/T702/load_balacer/load4.PNG" alt="">
+        <p>เมื่อสร้างเสร็จเราจะทำการทดลองว่าสลับเครื่องจริงหรือไม่โดย แก้หน้า index.html ของแต่ละเครื่องให้แตกต่างกันและลองเรียกให้ load balancers  ดู ซึ่งการทดลองนั้นได้ผลลัพธิ์ตามรูป ในบางครั้งที่ทำการ refresh จะเจอข้อความ T702_new_02 และ T702_new_01</p>
+        <img src="img/T702/load_balacer/load5.PNG" alt="">
+        <p>ข้อความของเครื่อง T702_new_02</p>
+        <img src="img/T702/load_balacer/load6.PNG" alt="">
+        <p>ข้อความของเครื่อง T702_new_01</p>
+    </div>
+</body>
+</html>

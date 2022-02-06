@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="static/jquary/jquery-3.6.0.min.js"></script>
+    <script src="static/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+    <style>
+      .warning{
+        color: red;
+      }
+      body{
+        height: auto;
+      }
+    </style>
+</head>
+<body>
+  <nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">หน้าแรก</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ติดต่อโรงพยายาล</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">เกี่ยวกับเว็บไซต์</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">เข้าสู่ระบบ</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <section class="py-1 text-center container">
+    <div class="row py-lg-1 mb-5">
+      <div class="col-lg-8 col-md-12 mx-auto">
+          <div class="card bg-light">
+              <div class="card-header" style="color:antiquewhite; background-color: blueviolet;">
+                <h1>
+                  กรุณาให้ข้อมูลตามความเป็นจริงเพื่อประโยชน์ของท่าน
+                </h1>
+              </div>
+              <div class="card-body bg-light">
+              <form action="check.html" name="main_form" method="post">
+                <h5 class="card-title">คำเตือน</h5>
+                <ul style="text-align:left";>
+                    <li>
+                      <h2>กรุณาตอบคำถามด้านข้อมูลส่วนบุคคลของท่าน</h2>
+                      <label class="form-check-label" for="name">
+                        <h4>ชื่อ</h4>
+                      </label>
+                      <input class="form-control" type="text" id="name" placeholder="กรอกชื่อของคุณ">
+                      <label class="form-check-label" for="surname">
+                        <h4>นามสกุล</h4>
+                      </label>
+                      <input class="form-control" type="text" id="surname" placeholder="กรอกนามสกุล">
+                      <label class="form-check-label" for="phone">
+                        <h4>เบอร์โทรศัพท์</h4>
+                      </label>
+                      <input class="form-control" type="phone" id="phone" placeholder="กรอกเบอร์โทรศัพท์">
+                      <label class="form-check-label" for="birth_date">
+                        <h4>วันเดือนปีเกิด (วัน 2 หลัก/เดือน 2 หลัก/ปีแบบ พ.ศ. 4 หลัก )</h4>
+                      </label>
+                      <input class="form-control" type="date" id="birth_date">
+                      <label class="form-check-label" for="card_input">
+                        <h4>เลขบัตรประจำตัวประชาชน</h4>
+                      </label>
+                      <input class="form-control" type="text" id="card_input" placeholder="111-1111-11111-1">
+                    </li>
+                    <li>
+                      <h2>กรุณาตอบคำถามด้านอาการของท่าน</h2>
+                      <h4>อุณหภูมิหรือประวัติว่ามีไข้
+                        มีไข้หรือไม่</h4>
+                      <div class="form-check" id="form1">
+                        <input class="form-check-input" type="radio" name="heat" id="heat1" value="yes">
+                        <label class="form-check-label" for="heat1">
+                          ใช่
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="heat" id="heat2" value="no">
+                        <label class="form-check-label" for="heat2">
+                          ไม่ใช่
+                        </label>
+                      </div>
+                    </li>
+                    <li>
+                      <h2>ประวัติเสี่ยง (ในช่วงเวลา 14 วันก่อนเริ่มป่วย)</h2>
+                      <h4>พบผู้ป่วยโควิดมาหรือไม่</h4>
+                      <div class="form-check" id="form2">
+                        <input class="form-check-input" type="radio" name="meet_covid" id="meet_covid1" value="yes">
+                        <label class="form-check-label" for="meet_covid1">
+                          ใช่
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="meet_covid" id="meet_covid2" value="no">
+                        <label class="form-check-label" for="meet_covid2">
+                          ไม่ใช่
+                        </label>
+                      </div>
+                    </li>
+                </ul>
+                <input type="submit" onClick="return validate();" class="btn btn-primary" id="form_submit" value="บันทึกประเมินความเสี่ยง">
+                </div>
+            </form>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+    $(document).ready(function(){
+      $("#phone").mask('(000)-000-0000');
+      $("#card_input").mask('000-0000-00000-0');
+    });
+
+    function validate(){
+      $(".warning").remove();
+      let check = true;
+      let first_error = null;;
+      $("input").not("#form_submit").each(function(){
+        if ($(this).val().trim() == ""){
+          $(this).before("<span class='warning'>*กรุณากรอกข้อมูลให้ครบ</span>");
+          check = false;
+          if (first_error == null){
+            first_error = $(this);
+          }
+        }
+      });
+      let checked = 0;
+      $("input[name='heat']").each(function(){
+        if ($("input[name='heat']:checked").val() == undefined){       
+          checked = checked+1;
+        }
+        if(checked == 2){
+          check = false;
+          $("#form1").prev().after("<span class='warning'>*กรุณากรอกข้อมูลให้ครบ</span>");
+          if (first_error == null){
+            first_error = $("#form1");
+          }
+        }
+      });
+      checked = 0;
+      $("input[name='meet_covid']").each(function(){
+        
+        if ($("input[name='meet_covid']:checked").val() == undefined){
+          checked++;
+        }
+        if(checked == 2){
+          check = false;
+          $("#form2").prev().after("<span class='warning'>*กรุณากรอกข้อมูลให้ครบ</span>");
+          if (first_error == null){
+            first_error = $("#form2");
+          }
+        }
+      });
+      if(first_error != null){
+        $('html, body').animate({
+          scrollTop: $(first_error).prev().offset().top
+        }, 500);
+      }
+
+      return check;
+    }
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="static/jquary/jquery-3.6.0.min.js"></script>
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url("static/fonts/Roboto-Medium.ttf");
+        }
+        
+        .main {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(245, 39, 245, 0.5);
+            opacity: 0;
+            text-align: center;
+            font-family: roboto;
+            padding: 10px;
+        }
+        
+        .main2 {
+            width: 500px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: green;
+            opacity: 0;
+        }
+        
+        .container01 {
+            width: 100%;
+            height: 1000px;
+            background-image: url('static/image/house-isolated-field.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .container02 {
+            width: 100%;
+            height: 1000px;
+            background-color: lightgreen;
+        }
+        
+        .searh_box {
+            padding: 20px;
+            border: 1px #333 solid;
+            border-radius: 25px;
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+        
+        .searh_box form input[type=submit],
+        select,
+        input[type=text] {
+            height: 40px;
+        }
+        
+        input[type=text] {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border: 0px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        
+        input[type=submit] {
+            border-radius: 0px 10px 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container01">
+        <div class="main">
+            <h1>ซื้อ ขาย อสังหา ในประเทศไทย</h1>
+            <b>เราช่วยให้คุณหาบ้านและที่ดินที่ถูกใจคุณ</b>
+            <div class="searh_box">
+                <form action="">
+                    <input type="text" name="keyword" id="q">
+                    <select name="property_type" id="">
+                        <option value="">บ้าน</option>
+                        <option value="">ที่ดิน</option>
+                        <option value="">เชิงพาณิชย์</option>
+                    </select>
+                    <input type="submit" value="search" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container02">
+        <div class="main2"></div>
+    </div>
+
+    <script>
+        anime({
+            targets: '.main',
+            translateY: 250,
+            rotate: '1turn',
+            opacity: [0, 1],
+            backgroundColor: 'hotpink',
+            duration: 800,
+            delay: 2000,
+        });
+
+        $(document).ready(function() {
+            var animationFromMain2 = function() {
+                if ($(".main2").attr("animation_finish") != 1) {
+                    $(".main2").attr("animation_finish", 1);
+                    var timeline = anime.timeline({
+                        easing: 'easeInElastic(5, 5)',
+                        duration: 2000,
+                    }).add({
+                        targets: '.main2',
+                        translateY: 250,
+                        rotate: '1turn',
+                        opacity: [0, 1],
+                        backgroundColor: '#f00',
+                        duration: 800,
+                    });
+                }
+            };
+
+            $(window).scroll(function() {
+                var hT = $('.main2').offset().top,
+                    hH = $('.main2').outerHeight(),
+                    wH = $(window).height(),
+                    wS = $(this).scrollTop();
+                if (wS > (hT + hH - wH)) {
+                    console.log('H1 on the view!');
+                    animationFromMain2();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

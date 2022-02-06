@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>เกม 15 puzzle (EV8)</h3>  
+        <img src="img/EV8/ClassDiagram.jpg" alt="">
+        <h3>Class diagram</h3>
+        <img src="img/EV8/ev8_p1.PNG" alt="">
+        <h5>Class RunGame</h5>
+        <p> - เมื่อคลาสนี้ถูกเรียก สร้าง และ แสดงTileทั้งหมด15อันขึ้นมาโดยมีตัวเลขอยู่ด้านในตรงกลาง พร้อมทั้งเก็บข้อมูลการเลื่อนของ Tile และเวลาในการแก้ปริศนาด้วยเมื่อเริ่มเกม จะทำการRandomตำแหน่งของTileก่อนและทุกครั้งในการขยับจะมี method checkWin()ในการตรวจสอบว่าเกมจบลงหรือยัง</p>
+        <h5>Class Tile</h5>
+        <p> - จะถูก Class RunGame เรียกใช้อีกทีโดยมี method get, set ในการปรับตำแหน่งและบอกตำแหน่งของ Tile และ Attribute เป็น สี ขนาด ตำแหน่ง และ ตัวเลขด้านใน</p>
+    </div>
+</body>
+</html>

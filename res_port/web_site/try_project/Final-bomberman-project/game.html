@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0;
+        }
+        .map{
+            background-color: aquamarine;
+            display: block;
+            margin:0 auto; 
+        }
+        .tab{
+            background-color: black;
+            display: block;
+            margin:0 auto; 
+        }
+        .tab2{
+            background-color: gray;
+            display: block;
+            margin:0 auto; 
+        }
+
+        .mygame{
+            background-color: wheat;
+            display: block;
+            width: 100%;
+        }
+
+        .start{
+            background-color: black;
+            display: block;
+            position: absolute;
+            
+            z-index: 10;
+        }
+
+        .guide{
+            background-color: black;
+            display: block;
+            margin:0 auto; 
+        }
+    </style>
+</head>
+<body>
+    <div class="mygame">
+        
+        <canvas class="start" id="start" width="650" height="650"></canvas>
+        <canvas class="tab" id="tab" width="650" height="60"></canvas>
+        <canvas class="tab2" id="tab2" width="650" height="20"></canvas>
+        <canvas class="map" id="map" width="650" height="650"></canvas>  
+        <canvas class="tab2" id="tab2" width="650" height="20"></canvas>
+        <canvas class="guide" id="guide" width="650" height="80"></canvas>
+    </div>
+
+    <script src="player.js"></script>
+    <script src="enemy.js"></script>
+    <script src="block.js"></script>
+    <script src="breakblock.js"></script>
+    <script src="bomb.js"></script>
+    <script src="fire.js"></script>
+    <script src="item.js"></script>
+    <script>
+        let start_tab = document.getElementById("start");
+        let map = document.getElementById("map");
+        let guide = document.getElementById("guide");
+
+
+        function setSize(){
+            start_tab.style.left = map.offsetLeft+"px";
+            start_tab.style.top = map.offsetTop+"px";
+        }
+        setSize();
+        window.addEventListener('resize', setSize);
+
+        let ctx = map.getContext("2d");
+        let tab_ctx = tab.getContext("2d");
+        let start_ctx = start_tab.getContext("2d");
+        let g_ctx = guide.getContext("2d");
+
+        let rightPressed = false;
+        let leftPressed = false;
+        let upPressed = false;
+        let downPressed = false;
+        let spacePressed = false;
+
+        let first = true;
+
+        let game_pause = true;
+
+        //////////// init ///////////
+        let bombs = [];
+        let items = [];
+        let fires = [];
+        let enemys = [];
+        let player = null;
+        let blocks = [];
+        let breakblocks = [];
+
+
+        const main = new Audio();
+
+        const theme = "audio/uses/theme.mp3";
+        const win_sound = "audio/uses/win.mp3";
+        const gameover_sound = "audio/uses/gameover.mp3";
+
+        const explode_sound = new Audio('audio/uses/explode.wav');
+        const item_sound = new Audio('audio/uses/item.wav');
+        const plant_sound = new Audio('audio/uses/plant.wav');
+
+    document.addEventListener("DOMContentLoaded", function() {
+        // KEYBOARD
+        document.addEventListener("keydown", keyDownHandler, false);
+        document.addEventListener("keyup", keyUpHandler, false);
+        function keyDownHandler(e) {
+            console.log(e.keyCode);
+            if(e.keyCode == 32) {
+                if(first){
+                    first = false;
+                    start_tab.remove();
+                    game_pause = false;
+
+                    main.src = theme;                
+                    main.play();
+                    main.loop = true;
+                    return;           
+                }
+                spacePressed = true;
+            }
+            if(e.keyCode == 68) {
+                rightPressed = true;
+            }
+            else if(e.keyCode == 65) {
+                leftPressed = true;
+            }
+            if(e.keyCode == 83) {
+                downPressed = true;        
+            }
+            else if(e.keyCode == 87) {
+                upPressed = true;
+            }
+        }
+        function keyUpHandler(e) {
+            if(e.keyCode == 32) {
+                spacePressed = false;
+            }
+            if(e.keyCode == 68) {
+                rightPressed = false;
+            }
+            else if(e.keyCode == 65) {
+                leftPressed = false;
+            }
+            if(e.keyCode == 83) {
+                downPressed = false;
+            }
+            else if(e.keyCode == 87) {
+                upPressed = false;
+            }
+        }
+
+        //////////// init ///////////
+        bombs = [];
+        items = [];
+        fires = [];
+        enemys = [];
+        player = new Player(0, 0, 2, map, bombs, items, fires,ctx);
+        blocks = createBlock();
+        breakblocks = createBreakBlock();
+
+        while(enemys.length < 3){
+            enemys = [];
+            blocks = [];
+            breakblocks = [];
+            blocks = createBlock();
+            breakblocks = createBreakBlock();
+        }
+
+        player.setblock(blocks, breakblocks);
+        player.setEnemy(enemys);
+        player.doAnime();
+
+        function newGame(){
+            main.pause();
+            spacePressed = false;
+            upPressed = false;
+            downPressed = false;
+            leftPressed = false;
+            rightPressed = false;
+            let sec = 8000;
+
+            if(player.win){
+                main.src = win_sound;
+                main.play();
+                main.loop =false;
+                sec = 5000;
+            }
+            else if(player.gameover){
+                main.src = gameover_sound;
+                main.play();
+                main.loop =false;
+            }
+            
+            
+            setTimeout(function(){
+                if(player.gameover){
+                    player.live = 3;
+                    player.bomb = 1;
+                    player.blaze = 1;
+                    player.score = 0;
+                }
+
+
+                bombs = [];
+                items = [];
+                fires = [];
+                enemys = [];
+                blocks = [];
+                breakblocks = [];
+    
+                blocks = createBlock();
+                breakblocks = createBreakBlock();
+    
+                while(enemys.length < 3){
+                    enemys = [];
+                    blocks = [];
+                    breakblocks = [];
+                    blocks = createBlock();
+                    breakblocks = createBreakBlock();
+                }
+    
+                player.reborn();
+                player.setblock(blocks, breakblocks);
+                player.setEnemy(enemys);
+                player.setItem(items);
+                player.setFires(fires);
+                time = 200;
+                main.src = theme;
+                main.play();
+                main.loop = true;
+                player.win = false;
+                player.gameover = false;
+                game_pause = false;
+            }, sec);
+        }
+
+        function createBlock(){  
+            let blocks = [];     
+            for(let i = 1; i < 12; i++){
+                for(let j = 0; j < 13; j++){
+                    if(j % 2 != 0 && i % 2 != 0){
+                        let block = new Block(j*50, i*50, map);
+                        blocks.push(block);
+                    }
+                }
+            }
+            return blocks;
+        }
+
+        
+        function createBreakBlock(){  
+            let breakblocks = []; 
+            for(let i = 0; i < 13; i++){
+                for(let j = 0; j < 13; j++){
+                    if(i == 0 && j == 0 || i == 1 && j == 0 || i == 0 && j == 1){
+                        continue;
+                    }
+                    if(j % 2 != 0 && i % 2 != 0 && i != 0){
+                        continue;
+                    }
+                    else{
+                        let rand = Math.random();
+                        if(rand > 0.4 && rand <= 0.8){
+                            let breakblock = new BreakBlock(j*50, i*50, map, "breakblocks"+breakblocks.length, false);
+                            breakblocks.push(breakblock);
+                        }
+                        else if(rand > 0.96){
+                            let newEnemy = new Enemy(j*50, i*50, 1, map, bombs, player, fires);
+                            newEnemy.setblock(blocks, breakblocks);
+                            enemys.push(newEnemy);
+                        }
+                    }
+                }
+            }
+            randDoor(breakblocks);
+            return breakblocks;
+        }
+
+        function randDoor(breakblocks){       
+            let rand = parseInt(Math.random() * breakblocks.length);
+            breakblocks[rand].setDoor(true);
+        }
+
+        function canPlant(x, y){
+            let coordi = Math.ceil(y / 50);
+            let coordj = Math.ceil(x / 50);
+            for(let i = 0; i < bombs.length; i++){
+                if(x == bombs[i].x 
+                && y == bombs[i].y){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function plantBomb(index){
+            if(player.bomb > 0){
+                let coordi = Math.round(player.y / 50);
+                let coordj = Math.round(player.x / 50);
+                let bombx = coordj * 50;
+                let bomby = coordi * 50;
+                if(canPlant(bombx, bomby)){
+                    plant_sound.play();
+                    let bomb = new Bomb(bombx, bomby, bombs, index, fires, items, player, ctx, map , item_sound);
+                    bombs.push(bomb);
+                    player.bomb--;
+                    if(!game_pause){
+                        bomb.explode(explode_sound);
+                    } 
+                }
+            }
+        }
+
+        function draw(){
+            ctx.clearRect(0, 0, map.width, map.height);
+            // KEYBOARD
+            if(!player.dead && !player.win && !player.gameover && !game_pause){
+                    ////////Bomb config//////////////////////
+                if(spacePressed){
+                    plantBomb();  
+                }
+                ////////Bomb config//////////////////////
+    
+                if(rightPressed){
+                    player.goRight();
+                    player.right = true;
+                }
+                else if(leftPressed){
+                    player.goLeft();
+                    player.left = true;
+                }
+                if(upPressed){
+                    player.goUp();
+                    player.up = true;
+                }
+                else if(downPressed){
+                    player.goDown();
+                    player.down = true;
+                }
+            }
+
+            if(!downPressed){
+                player.down = false;
+            }
+            if(!upPressed){
+                player.up = false;
+                
+            }
+            if(!leftPressed){
+                player.left = false;
+            }
+            if(!rightPressed){
+                player.right = false;
+            }
+
+            if(bombs.length > 0){
+                for(let i = 0;i < bombs.length;i++){
+                    if(!bombs[i].isexplode){
+                        bombs[i].drawBomb();
+                    } 
+                }
+            }
+
+            if(fires.length > 0){
+                for(let i = 0;i < fires.length;i++){
+                    for(let j = 0;j < fires[i].length;j++){
+                        if(!fires[i][j].iscool){
+                            fires[i][j].drawFire();
+                        } 
+                    }
+                }
+            }
+
+            if(items.length > 0){
+                for(let i = 0;i < items.length;i++){
+                    items[i].drawItem();
+                }
+            }
+
+            if(enemys.length > 0){
+                for(let i = 0;i < enemys.length;i++){
+                    if(enemys[i].gone){
+                        enemys.splice(i, 1);
+                    }
+                    else{
+                        ctx.drawImage(enemys[i].img, enemys[i].x, enemys[i].y,50,50);
+                        if(!player.dead && !player.win && !player.gameover && !game_pause){
+                            enemys[i].move();
+                        }
+                    }
+                }
+            }
+            
+            for(let i = 0;i < blocks.length;i++){
+                blocks[i].drawBlock();
+            }
+                        
+            for(let i = 0;i < breakblocks.length;i++){
+                if(breakblocks[i].isbreak != true){
+                    breakblocks[i].drawBlock();
+                }
+            }
+
+            if(!player.gone){
+                ctx.drawImage(player.img, player.x, player.y,50,50);
+                player.checkFire();
+                player.checkEnemy();
+            }
+            else{
+                if(player.live < 0){
+                    player.gameover = true;
+                    if(!game_pause){
+                        game_pause = true;
+                        newGame();
+                    }
+                   
+                }
+                if(!player.win && !player.gameover){
+                    player.reborn();
+                }            
+                if(enemys.length > 0){
+                    for(let i = 0;i < enemys.length;i++){
+                        enemys[i].reborn();
+                    }
+                }  
+            }
+
+            if(player.win && !game_pause){
+                game_pause = true;
+                newGame();
+            }
+            
+            setTimeout(function(){
+                requestAnimationFrame(draw);      
+            },10);
+            
+        }
+
+        /////////////// Tab ////////////////////////////////////
+        let time = 200;
+        let show_blaze_img = new Image();
+        show_blaze_img.src = "img/item/item_blaze.png";
+        let show_bomb_img = new Image();
+        show_bomb_img.src = "img/item/item_bomb.png";
+
+        function drawTab(){
+            tab_ctx.clearRect(0, 0, tab.width, tab.height);
+            tab_ctx.font = '20px serif';
+            tab_ctx.fillStyle = 'white';
+            tab_ctx.fillText('T : '+ time, 50 * 1, 30);
+            tab_ctx.drawImage(show_blaze_img, 50*3, 10, 30, 30);
+            tab_ctx.fillText(player.blaze, 50 * 4, 30);
+            tab_ctx.drawImage(show_bomb_img, 50 * 5, 10, 30, 30);
+            tab_ctx.fillText(player.bomb, 50 * 6, 30);
+            tab_ctx.fillText('Live : '+player.live, 50 * 7, 30);
+            tab_ctx.fillText('Score : '+player.score, 50 * 9, 30);
+            setTimeout(function(){
+                requestAnimationFrame(drawTab);
+            },10);
+        }
+
+        function timeRunning(){
+            setInterval(function(){
+                if(time > 0 && !player.dead && !player.win & !player.gameover && !game_pause){
+                    time--;
+                }
+                else if(time == 0 && !game_pause){
+                    game_pause = true;
+                    player.gameover = true;
+                    newGame();
+                }
+            }, 1000);
+        }
+
+        function drawstarttab(){
+            start_ctx.font = '25px serif';
+            start_ctx.fillStyle = 'white';
+            start_ctx.fillText("Press 'space bar' to start", 650/3, 650/2);
+        }
+
+        function drawGuide(){
+            g_ctx.clearRect(0, 0, guide.width, guide.height);
+            let arrow_img = new Image();
+            arrow_img.src = "img/guide/wasd.png";
+            let space_img = new Image();
+            space_img.src = "img/guide/space.png";
+
+            g_ctx.font = '18px serif';
+            g_ctx.fillStyle = 'white';
+
+            g_ctx.fillText("Move: ", 50*1 + 10, 80/2);
+            g_ctx.drawImage(arrow_img, 50*3, 15, 80, 50);
+
+            g_ctx.fillText("Plant Bomb: ", 50*6 - 10, 80/2);
+            g_ctx.drawImage(space_img, 50*8, 25, 200, 25);
+            setTimeout(function(){
+                requestAnimationFrame(drawGuide);
+            },10);
+        }
+
+
+        timeRunning();
+        drawTab();
+        draw();
+        drawstarttab();
+        drawGuide();
+    });
+
+    </script>
+    
+</body>
+</html>

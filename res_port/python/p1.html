@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>Pac-man</h3>
+        <img src="img/pac-man/pac-man.png" alt="">
+        <h3>Class Diagram</h3>
+        <img src="img/pac-man/p1.PNG" alt="">
+        <h5>Class gameState</h5>
+        <p> - เป็นคลาสสำหรับสร้าง canvas จาก tkinter ขึ้นมา และกำการกำหนดค่าเริ่มต้นต่างๆ ขึ้นมา เช่น สร้าง block จาก file txt ซึ่งเป็น map ของเกม ต่อมาสร้าง foodsmall และ foodbig หรือเป็น object ที่ทำหน้าที่เป็นอาหารของตัว player หรือ ตัว pac-man และ สร้าง ghost ที่เป็นศัตรูของ player และสั่งให้ player, ghost, foodbig ทำงานโดยผ่าน method action</p>
+        <h5>Class player</h5>
+        <p> - เป็นคลาสแทนตัวผู้เล่น หรือตัว pac-man นั้นเอง ใน constructor นั้นจะมีค่า ขนาด, ตำแหน่ง และ canvas ที่ต้องการจะวาดลงไป และยังมี method ที่จำเป็นต่อเกม เช่น let Eat ที่เอาไว้ตรวจสอบการชนของ player และ foodsmall, foodbig เพื่อนำไปเพิ่มเป็น score นอกจากนี้ถ้า player ชน foodbig จะมีความสามารถ eat ghost ได้ด้วย นอกจากนั้นก็มี method move เอาไปให้ player เคลื่อนไหวตาม keyboard และ สุดท้าย method action จะทำการเรียกตัวเองซ้ำๆ เพื่อสร้าง animation ให้แก่ player </p>
+        <h5>Class Ghost</h5>
+        <p> - เป็นคลาสที่มี Method คล้ายกับ player ในส่วนที่แตกต่างกันนั้นคือ Ghost ไม่ได้ move ด้วย keyboard แต่จะ move ตามตำแหน่งที่กำหนดไว้ผ่าน Method findpath ซึ่งใช้ Algorithm Shortest path ของ Dijtra ในการเขียน ซึ่งในการเดินของ Ghost นั้นจะมี 2 mode คือ hunt กับ roaming   ซึ่ง hunt นั้นจะทำการไล่ล่า player ตลอดเวลา ส่วน roaming จะทำการเดินแบบ random ทำให้สร้างสีสรรภายในเกมให้มีความหลากหลาย นอกจากนี้ยังมี run_mode และ deadmode ในส่วนของ run_mode นั้นเมื่อ player ทำการชน foodbig จะทำให้ ghost เกิด run_mode ขึ้นจะทำให้ ghost นั้นเดินช้าลงและสามารถถูกชนได้ในช่วงระยะเวลานึง ส่วน deadmode เมื่อ ghost อยู่ในสถานะ run_mode แล้วถูก player ชนจะทำให้เข้าสู่สถานะ deadmode ซึ่งในสถานะนี้ ghost จะเดินเร็วขึ้นและจะกลับไปยังจุดเกิดโดยผ่าน method findpath นั้นเอง</p>
+        <h5>Class block</h5>
+        <p> - จะทำหน้าที่แทนสิ่งกีดขวาง รูปสี่เหลี่ยมจัตุรัส ใช้สำหรับสร้าง map ขึ้นมาโดยจะมีการ กำหนดตำแหน่งในการสร้าง</p>
+        <h5>Class foodsmall</h5>
+        <p> - จะทำหน้าที่แทนอาหารของ player เมื่อ player มาชนจะได้ score ซึ่งในการสร้าง จะมีการกำหนดตำแหน่งเหมือนกับคลาสอื่นๆ</p>
+        <h5>Class foodbig</h5>
+        <p> - ทำหน้าที่เหมือนกับ foodsmall ทุกประการแต่จะแตกต่างกันเล็กน้อยคือจะมี animation การกระพริบเพิ่มเข้ามา</p>
+        <h5>Class Point</h5>
+        <p> - เป็นคลาสที่สร้างมาเพื่อ findpath โดยเฉพาะ ซึ่งจะมีตัวแปร x, y แทนตำแหน่ง isblock แทนว่าสามารถไปได้หรือไม่ isVisit คือแทนว่าได้ผ่านเส้นทางนี้ไปหรือยัง direction คือทิศทางที่ใช้ในการเคลื่อนที่ และสุดท้าย prev ไว้ชี้ point ก่อนหน้าเพื่อใช้ย้อนรอยเมื่อทำการหาเส้นทางที่สั้นที่สุดได้แล้ว </p>
+    </div>
+</body>
+</html>

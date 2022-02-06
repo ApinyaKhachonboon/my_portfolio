@@ -1,0 +1,153 @@
+body{
+    background-color:antiquewhite;
+}
+
+.gotop{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.menu li{
+    margin-left: 2em;
+}
+
+.foot{
+    font-weight: 200;
+    padding: 3em;
+}
+.foot p{
+    text-align: center;
+}
+.tag{
+    padding: 1.5em;
+    background-color:gainsboro;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn-box{
+    align-self: auto;
+    margin-left: 1.2em;   
+}
+.btn-box button{
+    font-size:1.2em;
+}
+footer{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 1.2em;
+}
+.containter{
+    margin-top: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+.information1{
+    max-width: 720px;
+    padding-left: 1.2em;
+    padding-right: 1.2em;
+}
+.main-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.logo{
+    display: flex;
+}
+.fab{
+    font-size:1.5em;
+    margin-left: 1.2em;
+}
+.nav-item{
+    font-size:1.2em;
+}
+
+
+/* lesson start */
+
+.all-btn{
+    height:100%;
+    display: block;
+    top: 0;
+}
+
+.left-side{
+    display: block;
+    max-width: 170px;
+    height:800px;
+}
+
+.left-side-menu{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    overflow-wrap: break-word;
+}
+
+.main-content{
+    display: flex;
+    background-color: antiquewhite;
+    min-height: 600px;
+    max-width:1500px;
+    margin: 0 auto;
+}
+
+.left-side-menu {
+    background-color: antiquewhite; 
+    color: black; 
+    border: 2px solid #007bff;
+  }
+
+.left-side-menu:hover {
+    background-color: #007bff;
+    color: white;
+  }
+
+.left-side-menu:active {
+    background-color: #007bff;
+    color: white;
+  }
+
+.right-side{
+    margin-left:5vw;
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    flex-flow: column;
+}
+.iframe{
+    width: 100%;
+    height: 100%;
+}
+#main_iframe{
+    max-width: 1000px;
+    width: 100%;
+    height: 100%;
+}
+
+/*contact us*/
+
+
+

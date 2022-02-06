@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>ยานพาหนะ</title>
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url("static/font/Roboto-Bold.ttf");
+        }
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "roboto";
+        }
+        
+        nav {
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            overflow: auto;
+        }
+        
+        nav>ul {
+            list-style: none;
+            margin: 0px;
+            float: right;
+            margin-right: 40px;
+        }
+        
+        nav>ul>li {
+            padding: 10px;
+            display: inline-block;
+        }
+        
+        nav>ul>li:hover {
+            background-color: brown;
+        }
+        
+        nav>ul>li>a {
+            text-decoration: none;
+            color: white;
+        }
+        /* header start */
+        
+        header {
+            min-height: 600px;
+            background-size: 100% 600px;
+            background-repeat: no-repeat;
+            background-image: url("static/image/car-in-storm-2r.jpg");
+            filter: grayscale(40%);
+        }
+        
+        .rent_now {
+            border: 1px solid black;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            padding: 30px;
+            color: white;
+            width: 400px;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            position: absolute;
+            border-radius: 25px;
+        }
+        
+        .rent_now>button {
+            background-color: red;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 25px;
+            box-shadow: 0px 0px 20px gray;
+        }
+        
+        .rent_now>button:hover {
+            background-color: lime;
+            color: black;
+            box-shadow: 0px 0px 20px green;
+        }
+        /* header end */
+        /*company history start*/
+        
+        .company_history {
+            height: 300px;
+            width: 100%;
+        }
+        
+        .company_history>div {
+            float: left;
+            width: 50%;
+            height: 300px;
+            position: relative;
+        }
+        
+        .company_history>.left {
+            background-color: darkcyan;
+        }
+        
+        .company_history>.left>img {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .company_history>.right {
+            background-color: khaki;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        
+        .highlight {
+            color: orangered;
+        }
+        
+        .company_history>.left>.overlay {
+            background-color: darkgoldenrod;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: 1s ease;
+            background-color: darkgoldenrod;
+        }
+        
+        .company_history>.left:hover .overlay {
+            opacity: 1;
+        }
+        
+        .company_history>.left>.overlay>.txt {
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+            font-style: oblique;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+        
+        .company_history>.left:hover .overlay {
+            opacity: 1;
+            display: block;
+        }
+        
+        .company_history button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 25px;
+            border: 2px solid yellowgreen;
+            background: linear-gradient(to left, yellowgreen 33%, red 66%);
+            background-size: 300% 100%;
+            background-position: right bottom;
+            transition: all ease .2s;
+        }
+        
+        .company_history button:hover {
+            background-position: left bottom;
+            color: white;
+        }
+        /*company history end*/
+        /*feature start*/
+        
+        .feature {
+            display: flex;
+            z-index: 5;
+            overflow: visible;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            height: 450px;
+            box-sizing: border-box;
+            background-color: rgb(204, 204, 204);
+        }
+        
+        .feature>.feature_item {
+            display: flexbox;
+            position: relative;
+            height: 330px;
+            width: 28%;
+            background-color: rgb(100, 80, 80);
+            text-align: center;
+            color: white;
+            padding: 30px;
+            box-sizing: border-box;
+            overflow: hidden;
+            transition: all .3s ease;
+        }
+        
+        .feature>.darker {
+            width: 44%;
+            background-color: rgb(200, 50, 50);
+        }
+        
+        .feature>:hover {
+            height: 400px;
+            top: -35px;
+            background-color: black;
+            box-shadow: 5px 10px 18px black;
+            transition: all .3s ease;
+        }
+        /*feature end*/
+        /*about start*/
+        
+        .about {
+            display: block;
+            position: relative;
+            min-height: 500px;
+            background-repeat: no-repeat;
+            background-size: 100% 600px;
+            background-position: center;
+            background-image: url("static/image/red-luxury-sedan-road.jpg");
+            filter: grayscale(80%);
+            border: 1px solid black;
+            transition: all ease .3s;
+        }
+        
+        .about:hover {
+            filter: grayscale(0%);
+            transition: all ease .3;
+            background-size: 120% 720px;
+            color: white;
+        }
+        
+        .about>div {
+            text-align: center;
+            height: 80px;
+            overflow: hidden;
+            margin: 5px;
+            min-width: 180px;
+            width: 50%;
+            border: 1px solid yellowgreen;
+            border-radius: 40px;
+            padding: 14px;
+            box-sizing: border-box;
+            margin-top: 30px;
+            margin-left: 15%;
+            background: linear-gradient(to left, yellowgreen 33%, red 66%);
+            background-size: 300% 100%;
+            background-position: right bottom;
+            cursor: pointer;
+            transition: all ease .3s;
+        }
+        
+        .about>div>h4 {
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .about>div>p {
+            padding: 3px;
+            margin: 3px;
+        }
+        
+        .about>.step_01 {
+            margin-left: 5%;
+        }
+        
+        .about>.step_02 {
+            margin-left: 15%;
+        }
+        
+        .about>.step_03 {
+            margin-left: 25%;
+        }
+        
+        .about>.step_04 {
+            margin-left: 35%;
+        }
+        
+        .about>.step_05 {
+            margin-left: 45%;
+        }
+        
+        .about>div:hover {
+            background-position: left bottom;
+        }
+        /*about end*/
+        /*footer start*/
+        
+        footer {
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            text-align: center;
+            padding-top: 20px;
+            clear: both;
+            font-size: 0.8em;
+        }
+        /*footer end*/
+        
+        @media screen and (max-width:600px) {
+            .company_history {
+                display: flex;
+                height: auto;
+                flex-direction: column;
+            }
+            .company_history>div {
+                display: flexbox;
+                width: 100%;
+            }
+            .feature>.feature_item {
+                height: auto;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+            .feature {
+                height: auto;
+                flex-direction: column;
+            }
+            .feature>.darker {
+                width: 100%;
+                height: auto;
+            }
+            .feature>.feature_item:hover {
+                top: 0px;
+            }
+            .rent_now {
+                width: 80%;
+                left: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="about_us.html">ABOUT</a>
+            </li>
+            <li>
+                <a href="contact.html">CONTACT</a>
+            </li>
+        </ul>
+    </nav>
+    <header>
+        <div class="rent_now">
+            <h1>บริการ<span class="highlight">เช่ารถ</span>สำหรับนักผจญภัย</h1>
+            <p><span class="highlight">Lorem, ipsum</span> dolor sit amet consectetur adipisicing elit. Quidem, nam.</p>
+            <button>เช่าเลย</button>
+        </div>
+    </header>
+    <section class="company_history">
+        <div class="left">
+            <img src="static/image/company_history.jpg" alt="company_history" />
+            <div class="overlay">
+                <div class="txt">
+                    <h2>Hello EPT</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, eligendi.</p>
+                    <button onclick="alert('hello')">Contact Sell Manager</button>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <p><i class="fas fa-building" style="font-size: 48px;"></i></p>
+            <h1><span class="highlight">ประวัติ</span>บริษัทของเรา</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum temporibus nihil veritatis tempore consectetur magnam! Rerum tenetur amet, perspiciatis saepe sed quam ea obcaecati ratione sint dolorem commodi sapiente fuga!</p>
+
+        </div>
+    </section>
+    <section class="feature">
+        <div class="feature_item">
+            <p>
+                <i class="fas fa-car" style="font-size: 48px;"></i></p>
+            <h2>ยานพาหนะ
+                <span class="highlight">หลากหลาย</span>
+            </h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, delectus?</p>
+        </div>
+        <div class=" feature_item darker">
+            <p><i class="fas fa-hands-helping" style="font-size: 48px;"></i></p>
+            <h2>มี <span class="highlight">เจ้าหน้าที่</span> คอยช่วยเหลือ</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, delectus?</p>
+        </div>
+
+        <div class="feature_item">
+            <p>
+                <i class="fas fa-dollar-sign" style="font-size: 48px;"></i></p>
+            <h2><span class="highlight">หรูหรา</span> ในราคาจับต้องได้</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate, delectus?</p>
+        </div>
+    </section>
+    <div style="clear:both; height:10px;"></div>
+    <section class=" about ">
+        <div class="step_01">
+            <h4>Step 1</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="step_02">
+            <h4>Step 2</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="step_03">
+            <h4>Step 3</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="step_04">
+            <h4>Step 4</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="step_05">
+            <h4>Step 5</h4>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+    </section>
+    <section class="contact "></section>
+    <footer>
+        <h4>All right reserved @ 2025 Expert-Programming-Tutor.com</h4>
+        <p><i class="fas fa-phone "></i> 0627047744</p>
+        <p><i class="fas fa-envelope-square "></i> omanudeo@gmail.com</p>
+        <p style="font-size: 2em; ">
+            <i class="fab fa-cc-apple-pay "></i>
+            <i class="fab fa-cc-amazon-pay "></i>
+            <i class="fab fa-cc-paypal "></i>
+            <i class="fab fa-cc-visa "></i>
+            <i class="fab fa-cc-mastercard "></i>
+        </p>
+    </footer>
+</body>
+
+</html>
+
+</html>

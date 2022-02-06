@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/web_style.css">
+</head>
+<style>
+    footer{
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    body{
+        min-width: 600px;
+        background-color:antiquewhite;
+    }
+
+    @media screen and (max-width:720px) {
+        footer{
+            position: relative;
+        }
+        .main-content{
+            flex-direction: column;
+        }
+        .left-side{
+            padding-left: 10vw;
+            padding-right: 10vw;
+            max-width: none;
+            width: 100%;
+            justify-content: center;
+            height:auto;
+        }
+        .all-btn{
+            height: auto;
+        }
+
+        .right-side{
+            height: auto;
+            min-height:0;
+        }
+    }
+
+    @media screen and (max-height:800px) {
+        footer{
+            position: relative;
+        }
+    }
+</style>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="menu collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="lesson.html">Lesson</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Workshop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section>
+
+        <div class="main-content">
+            <div class="btn-group-vertical left-side">
+                <div class="btn-group-vertical all-btn">
+                    <button type="button" class="btn btn-primary left-side-menu" onclick="onclickRent();">rentcar</button>
+                    <button type="button" class="btn btn-primary left-side-menu" onclick="onclickReal();">real-estaste</button>
+                    <button type="button" class="btn btn-primary left-side-menu" onclick="onclickCovid();">covid-19</button>
+                </div>
+            </div>
+            <div class="right-side" id="right_pane">
+                <div class="iframe">
+                    <iframe id="main_iframe" src=""></iframe>
+                </div>      
+            </div>
+        </div>
+        <button class="gotop" id="gotop" onclick="go_to_top()"><i class="fas fa-chevron-up"></i></button>
+    </section>
+    <footer>
+        <div class="tag">
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    html
+               </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    css
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    javascript
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    jQuery
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    font-awesome
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    graph
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    google
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    bootstrap
+                </button>
+            </div>
+            <div class="btn-box">  
+                <button type="button" class="btn btn-info text-white m-2">
+                    anime.js
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white  m-2">
+                    Workshop
+                </button>
+            </div>
+        </div>
+        <div class="foot bg-dark text-white">
+            <div>
+                <p>All rights reserved 2021</p>
+            </div>
+            
+            <div class="main-logo">           
+                <div class="logo">
+                    <p><a class="text-white" href="#"><i class="fab fa-twitter"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-google-plus-g"></i></a></i></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-facebook"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-instagram"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        anime({
+            targets: '.btn-box',
+            rotate: '1turn',
+            duration: 800
+          });
+        
+        var mybutton = document.getElementById("gotop");
+        window.onscroll = function() {scrollFunction()};
+        
+        window.addEventListener('resize', function(event) {
+            let myIframe = document.getElementById("main_iframe");
+            if(window.innerWidth < 800 && myIframe.getAttribute("src") != ""){
+                let myIframe = document.getElementById("main_iframe");
+                myIframe.style.height = 600+"px";
+            }
+        }, true);
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function go_to_top(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 200);
+        }
+        function onclickRent() {
+            let myIframe = document.getElementById("main_iframe");
+            myIframe.setAttribute("src", "src/workshop_rent_car/index.html");
+            console.log(window.innerWidth);
+            if (window.innerWidth < 800){    
+                myIframe.style.height = 600+"px";
+                $('html, body').animate({
+                    scrollTop: $('#main_iframe').offset().top
+                }, 500);
+            }
+        }
+
+        function onclickReal() {
+            let myIframe = document.getElementById("main_iframe");
+            myIframe.setAttribute("src", "src/workshop/home_search.html");
+            console.log(window.innerWidth);
+            if (window.innerWidth < 800){    
+                myIframe.style.height = 600+"px";
+                $('html, body').animate({
+                    scrollTop: $('#main_iframe').offset().top
+                }, 500);
+            }
+        }
+
+        function onclickCovid() {
+            let myIframe = document.getElementById("main_iframe");
+            myIframe.setAttribute("src", "src/work_shop_covid19/index.html");
+            console.log(window.innerWidth);
+            if (window.innerWidth < 800){    
+                myIframe.style.height = 600+"px";
+                $('html, body').animate({
+                    scrollTop: $('#main_iframe').offset().top
+                }, 500);
+            }
+        }
+    </script>
+</body>
+</html>

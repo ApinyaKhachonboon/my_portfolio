@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>LEX</h3>
+        <p>LEX คือ Chat bot ของ Amazon โดยเราจะมาทดลองใช้โดยให้ Ai Order สินค้าจาก DynamoDB โดยอัตโนมัติโดยผ่าน Lambda Function มีขั้นตอนการสร้างดังนี้ ไปที่ service->Amazon Lex กด Create และ ปรับค่าต่างตามรูปด้านล่าง</p>
+        <img src="img/T702/Lex/Lex3.PNG" alt="">
+        <p>ต่อมาในหน้าถัดไปให้ create Intent ขึ้นมาตั้งชื่อตามต้องการ</p>
+        <img src="img/T702/Lex/Lex4.PNG" alt="">
+        <p>ขั้นตอนต่อไปให้ create slot type ใส่ข้อมูลของ product_name ของเรา และให้ create อีก slot สำหรับใส่จำนวน 1 – 9</p>
+        <img src="img/T702/Lex/Lex5.PNG" alt="">
+        <p>ต่อมาให้ใส่ข้อมูลตามรูปด้านล่าง</p>
+        <img src="img/T702/Lex/Lex6.PNG" alt="">
+        <p>Sample utterances หมายถึง Ai จะตอบตามข้อมูลที่ได้รับเข้ามา และจะตอบกลับไปตาม prompt ที่ตั้งเอาไว้ เมื่อเสร็จแล้วไปสร้าง Role ไปที่ IAM create role เพิ่ม policy Amazon Lex full access จากนั้นไปที่ function lambda create function เลือก role ที่พึ่งสร้างมา เสร็จแล้วให้ พิมพ์ code และเปลี่ยนชื่อ slot กับที่เราตั้งไว้ ตามรูป  </p>
+        <img src="img/T702/Lex/Lex7.PNG" alt="">
+        <p>เสร็จแล้วให้กด Deploy และกลับมายังหน้า LEX อีกครั้งเลือก Function ที่เราสร้างเอาไว้ในช่อง Fullfillment ดังภาพเสร็จแล้วกด save Intent และกด build รอจนกว่าจะเสร็จ</p>
+        <img src="img/T702/Lex/Lex8.PNG" alt="">
+        <p>เมื่อเสร็จให้ทดลอง chat กับ bot ที่เราสร้างขึ้นว่าตอบมาถูกต้องหรือไม่ ตามรูปด้านล่างถือว่าสำเร็จ</p>
+        <img src="img/T702/Lex/Lex9.PNG" alt="">
+    </div>
+</body>
+</html>

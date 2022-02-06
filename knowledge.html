@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/my_page.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my-nav">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="project.html">Project</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link isActive" href="#">Knowledge</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about_me.html">About me</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section class="contents-port">
+        <div class="left-port" id="left-port">
+          <div class="menu-port bg-dark" id="menu-port">
+            <ul class="menu-info">
+              <li class="header">Workshop (w701)</li>
+              <li class="my_item" id="wks1" onclick="menuOpenInfo('index', 'w701/wks1')">Workshop Rent car</li>
+              <li class="my_item" id="wks2" onclick="menuOpenInfo('home_search', 'w701/wks2')">Workshop Real Estate</li>
+              <li class="my_item" id="wks3" onclick="menuOpenInfo('index', 'w701/wks3')">Workshop covid-19</li>
+
+              <li class="header">Web site (w701)</li>
+              <li class="my_item" id="wk1" onclick="menuOpenInfo('wk1', 'w701')">Html</li>
+              <li class="my_item" id="wk2" onclick="menuOpenInfo('wk2', 'w701')">Css</li>
+              <li class="my_item" id="wk3" onclick="menuOpenInfo('wk3', 'w701')">JavaScript</li>
+              <li class="my_item" id="wk4" onclick="menuOpenInfo('wk4', 'w701')">jQuery</li>
+              <li class="my_item" id="wk5" onclick="menuOpenInfo('wk5', 'w701')">Bootstarp</li>
+              <li class="my_item" id="wk6" onclick="menuOpenInfo('wk6', 'w701')">Anime.js</li>
+              <li class="my_item" id="wk7" onclick="menuOpenInfo('wk7', 'w701')">Google Map API</li>
+              <li class="my_item" id="wk8" onclick="menuOpenInfo('wk8', 'w701')">Font-awesome</li>
+              <li class="my_item" id="wk9" onclick="menuOpenInfo('wk9', 'w701')">Graph</li>
+              <li class="my_item" id="wk10" onclick="menuOpenInfo('wk10', 'w701')">Workshop Rent car (Explain)</li>
+              <li class="my_item" id="wk11" onclick="menuOpenInfo('wk11', 'w701')">Workshop Real Estate (Explain)</li>
+              <li class="my_item" id="wk12" onclick="menuOpenInfo('wk12', 'w701')">Workshop covid-19 (Explain)</li>
+
+              <li class="header">Amazon Service (T702)</li>
+              <li class="my_item" id="t1" onclick="menuOpenInfo('t1', 't702')">EC2</li>
+              <li class="my_item" id="t2" onclick="menuOpenInfo('t2', 't702')">Lightsail</li>
+              <li class="my_item" id="t3" onclick="menuOpenInfo('t3', 't702')">Elastic Block Store</li>
+              <li class="my_item" id="t4" onclick="menuOpenInfo('t4', 't702')">S3</li>
+              <li class="my_item" id="t5" onclick="menuOpenInfo('t5', 't702')">EFS (Elastic File System)</li>
+              <li class="my_item" id="t6" onclick="menuOpenInfo('t6', 't702')">Lambda</li>
+              <li class="my_item" id="t7" onclick="menuOpenInfo('t7', 't702')">DynamoDB</li>
+              <li class="my_item" id="t8" onclick="menuOpenInfo('t8', 't702')">LEX</li>
+              <li class="my_item" id="t9" onclick="menuOpenInfo('t9', 't702')">Load Balancing</li>
+              <li class="my_item" id="t10" onclick="menuOpenInfo('t10', 't702')">Auto scaling</li>
+              <li class="my_item" id="t11" onclick="menuOpenInfo('t11', 't702')">Elastic Beanstalks</li>
+              
+              <li class="header">สรุปความรู้ที่เรียนมา</li>
+              <li class="my_item" id="sec0" onclick="menuOpenInfo('sec0', 'section2')">Web Front End</li>
+              <li class="my_item" id="sec1" onclick="menuOpenInfo('sec1', 'section2')">Java</li>
+              <li class="my_item" id="sec2" onclick="menuOpenInfo('sec2', 'section2')">Data structure & Algorithms</li>
+              <li class="my_item" id="sec3" onclick="menuOpenInfo('sec3', 'section2')">Machine & Deep Learning</li>
+              <li class="my_item" id="sec4" onclick="menuOpenInfo('sec4', 'section2')">Linux</li>
+              <li class="my_item" id="sec5" onclick="menuOpenInfo('sec5', 'section2')">GIT</li>
+              <li class="my_item" id="sec6" onclick="menuOpenInfo('sec6', 'section2')">Node.js (Workshop EPT-PROPERTY)</li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="right-port">
+          <div class="information-port">
+            <iframe id="my_iframe" class="information-port" width="100%" height="100% src="" frameborder="0"></iframe>
+          </div>
+        </div>
+        <button class="openbtn" id="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>  
+        <button class="gotop" id="gotop" onclick="go_to_top()"><i class="fas fa-chevron-up"></i></button>     
+    </section>
+    <footer class="bg-dark" id="my_footer">
+      <div class="contact_me">
+        <p>Contact Me</p>
+      </div>
+      <div class="contact_me_info">
+        <a href="https://www.facebook.com/ApinyaKhachonboon"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:apinya.khachonboon@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a><i class="fas fa-mobile-alt"></i> 062-704-7744</a>
+      
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script>
+      //Get the button
+    let mybutton = document.getElementById("gotop");
+    let menu_port = document.getElementById("menu-port");
+    let left_port = document.getElementById("left-port");
+    let my_nav = document.getElementById("my-nav");
+    window.onscroll = function() {scrollFunction()};
+    window.addEventListener('resize', reportWindowSize);
+
+    function reportWindowSize() {
+      if (menu_port.offsetWidth != 250){ 
+        if(document.body.offsetWidth >= 750){
+          menu_port.style.width = "250px";
+        }
+      }
+      else{
+        if(document.body.offsetWidth < 750){
+          menu_port.style.width = "0px";
+        }
+      }
+    }
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+        left_port.style.top = "0px";
+      } else {
+        mybutton.style.display = "none";
+        let h = my_nav.offsetHeight;
+        left_port.style.top = h+"px";
+      }
+    }
+
+    function go_to_top(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 200);
+    }
+    function openNav() {    
+      if(menu_port.offsetWidth == 0){
+        menu_port.style.width = "250px";
+      }
+      else{
+        menu_port.style.width = "0px";
+      }     
+    }
+    function menuOpenInfo(id, my_type){
+      $("li").each(function() {
+        $(this).removeClass("menu_activate");
+      });
+      $("#"+id).addClass("menu_activate");
+      $("#my_iframe").attr("src", "res_port/"+my_type+"/"+id+".html");
+      if(document.body.offsetWidth < 750){
+        menu_port.style.width = "0px";
+      }
+    }
+  
+    window.addEventListener('DOMContentLoaded', function(e) {
+    
+      let iframe = document.querySelector("#my_iframe");
+      let right_port = document.getElementById("right-port");
+      iframe.addEventListener('load', function() {
+        
+        iframe.style.height = iframe.contentDocument.body.scrollHeight + 100 + 'px';
+        //iframe.style.width = right_port.offsetWidth+"px";
+      });	
+      iframe.addEventListener('resize', function() {
+        iframe.style.height = iframe.contentDocument.body.scrollHeight + 100 + 'px';
+        iframe.style.width = right_port.offsetWidth+"px";
+      });	
+    });
+    </script>
+</body>
+</html>

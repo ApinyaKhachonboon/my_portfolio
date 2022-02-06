@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>Web-game (Bomberman)</h3>
+        <img src="img/bomberman/bb1.png" alt="">
+        <h3>Class Diagram</h3>
+        <img src="img/bomberman/bb2" alt="">
+        <h5>game.html </h5>
+        <p>เป็นไฟล์ main หลักของเกม ซึ่งจะทำการ Import Class Block, Bomb, BreakBlock, Enemy, Item, Player อีกทีเพื่อนำแต่ละ Object มาวาดลงใน canvas ด้วย Method เช่น createBlock, createBreakBlock ใช้วาดลงในตำแหน่งที่ต้องการ เพื่อใช้ในการ Genarate map ขึ้นมา นอกจากนี้ยังมี Method keyDownHandler ใช้ในการดักคีย์ที่ต้องการใช้ในการเล่นเกม นอกจากนี้ยังมี method ต่างๆที่เกี่ยวกับกลไกของเกม เช่น canPlant ทำหน้าที่เช็คว่าระเบิดเกินจำนวนที่กำหนดหรือยัง และคำนวณให้วางตรงกับช่องพอดีด้วย สุดท้าย Method draw ทำหน้าที่ update แต่ละ frame เพื่อให้เกิด animation ขึ้นมาโดยมี Method built in ที่เรียกตัวเองซ้ำๆชื่อ  requestAnimationFrame</p>
+        <h5>player.js</h5>
+        <p>ทำหน้าที่เหมือนกับตัวผู้เล่นโดยเก็บค่าตำแหน่ง, รูป, score, bomb, blaze และยังมี Method เช็คตำแหน่งต่างๆว่าสามารถเดินไปได้หรือไม่ มีการตรวจสอบการชนของ Enemy, Item และมี Method Reborn เวลาผู้เล่นตายจะไปเกิดในตำแหน่งเดิม</p>
+        <h5>Enemy.js</h5>
+        <p>จะมีทุกอย่างที่คล้ายกับ Class Player จะมีที่แตกต่างคือ จะมี Method ในการ random ทิศทางที่จะเดินเมื่อเดินไปติด block จะเรียก random ทิศทางใหม่ทุกครั้ง</p>
+        <h5>bomb.js</h5>
+        <p>ทำหน้าที่แทนระเบิดที่ผู้เล่นได้วางไว้ นอกจากนั้นยังมี Method checkBlock เพื่อดูว่า bomb ถูกวางในตำแหน่งที่ถูกต้องหรือไม่ และทำการ random Item จาก breakblock ที่ถูกทำลายไปด้วย และสุดท้ายคือ Method explode จะทำการสร้าง fires ตามเงื่อนไขที่กำหนดไว้ในทิศทางที่ถูกต้อง</p>
+        <h5>fires.js</h5>
+        <p>ทำหน้าที่เป็นเหมือนไฟของระเบิดซึ่งด้านในจะเป็นตำแหน่ง, รูปในทิศทาง ต่างๆ ซึ่งจะถูกเรียกโดย Method explode จาก Class Bomb</p>
+        <h5>breakblock.js</h5>
+        <p>ทำหน้าที่เหมือนสิ่งกีดกวาง สามารถถูกทำลายได้เมื่อเกิด explode จาก Class Bomb และมี Method setDoor เมื่อระถูกทำลายจะส้รางประตูขึ้นมา</p>
+        <h5>block.js</h5>
+        <p>มีทุกอย่างที่เหมือนกับ breakblock แต่ไม่สามารถถูกทำลายได้</p>
+    </div>
+</body>
+</html>

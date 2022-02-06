@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>DynamoDB</h3>
+        <p>DynamoDB คือ Database แบบ NoSQL ให้ไปที่ service->DynamoDB จากนั้นให้ Create Table ขึ้นมาตามรูป ตั้งชื่อ Table และ Primary key แล้วกด create</p>
+        <img src="img/T702/DynamoDB/DB3.PNG" alt="">
+        <p>หลังจาก create เสร็จให้ไปที่ Table ที่เราพึ่งสร้างเราสามารถ เพิ่ม column และข้อมูลในตารางโดยการไปที่ item และ create item ขึ้นมาตามภาพ เสร็จแล้วกด save</p>
+        <img src="img/T702/DynamoDB/DB4.PNG" alt="">
+        <p>นอกจากนี้เรายังสามารถใช้ Lambda Function ในการ insert ข้อมูลลงไปได้ด้วยโดยทำดังนี้ ขั้นตอนแรกต้องสร้าง user ที่สามารถเข้าถึง DynamoDB ได้ก่อนไปที่ IAM->Role->create role-> common use case 
+            -> lambda ต่อมาให้ create Policy พิมพ์ DynamoDB เลือกที่ Full Access ตามรูปด้านล่าง</p>
+        <img src="img/T702/DynamoDB/DB5.PNG" alt="">
+        <p>กด next ไปจนกระทั่ง create role เสร็จเรียบร้อยจากนั้นให้ไปที่ Lambda Function ทำการ create function ขึ้นมาและเลือก role ที่พึ่งสร้างไว้ดังรูป</p>
+        <img src="img/T702/DynamoDB/DB6.PNG" alt="">
+        <p>ต่อมาให้ไปโหลด code function ที่ url ด้านล่าง</p>
+        <p><a href="https://expert-programming-tutor.com/Downloads/t702/lambda-db.zip">https://expert-programming-tutor.com/Downloads/t702/lambda-db.zip</a></p>
+        <p>แตก file ออกมาแล้วทำการแก้ไขชื่อให้ตรงกับ Table ที่เราสร้างตาม code ด้านล่าง</p>
+        <img src="img/T702/DynamoDB/DB7.PNG" alt="">
+        <p>จากนั้นให้บีบอัด zip ใหม่แล้วทำการ upload function ขึ้นไปที่ lambda และลองทำการ test โดยใส่ param ตามรูปด้านล่าง</p>
+        <img src="img/T702/DynamoDB/DB8.PNG" alt="">
+        <p>เมื่อกด test สำเร็จแล้วให้กลับไปดูที่ DynamoDB ว่ามีข้อมูล Insert มาหรือยังถ้าปรากฏตามรูปด้านล่าง ถือว่า สำเร็จ</p>
+        <img src="img/T702/DynamoDB/DB9.PNG" alt="">
+        <p>ต่อมาให้ทดลองสร้างอีก 1 function คือ showDb เอาไว้แสดงข้อมูลในตารางในรูปแบบของ json ทำทุกอย่างเหมือนกันการสร้าง function ด้านบนเมื่อสร้างเสร็จให้ พิมพ์ code ไปตามนี้และเปลี่ยน tableName ให้ตรงกับที่เราสร้างไว้ เสร็จแล้วให้กด Deploy</p>
+        <img src="img/T702/DynamoDB/DB10.PNG" alt="">
+        <p>ต่อมาให้ลอง test ดูถ้าไม่มี error และได้รับข้อมูลจากตารางของเราถือว่าสำเร็จ ตามรูปด้านล่าง</p>
+        <img src="img/T702/DynamoDB/DB11.PNG" alt="">
+    </div>
+</body>
+</html>

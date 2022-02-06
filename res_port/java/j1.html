@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>Ms-Paint (FinalMsPaint)</h3>
+        <h3>Class diagram</h3>
+        <img src="img/Ms_paint/class_diagram.jpg" alt="">
+        <img src="img/Ms_paint/ms_paint.PNG" alt="">
+        <h5>ใช้การเขียนแบบ OOP </h5>
+        <h5>Class MS_PAINT_GUI ทำหน้าที่แสดงผล เครื่องมือต่างๆของโปรแกรม ดังต่อไปนี้</h5>
+        <p> - ปุ่ม File ใช้ JMenu ในการสร้าง เมื่อ click จะมีปุ่ม save และ load แสดงขึ้น</p>
+        <p> - Save ทำหน้าที่ save จาก Object BlankArea ทุกพิเซลในรูปแบบของไฟล์ นามสกุลรูปภาพเช่น PNG, JPG, GIF</p>
+        <p> - Load ทำหน้าที่ Load ไฟล์ นามสกุลรูปภาพ เช่น PNG, JPG, GIF มาแสดงผลใน Object BlankArea</p>
+        <p> - Group ของ Brash และ Eraser จะมีขนาดให้ปรับในรูปแบบ Dropdown สามารถเลือกได้ตามต้องการ</p>
+        <p> - ปุ่ม undo สามารถกด เพื่อย้อนขั้นตอนทีละขั้น สามารถใช้ Short-cut Ctrl+z แทนได้</p>
+        <p> - ปุ่ม Rotate ทั้ง 3 ปุ่มใช้ในการหมุน Object Shape ด้านขวา</p>
+        <p> - ปุ่ม Triangle, Rect, Oval และ Star ใช้ในการสร้างรูปร่าง ตามชื่อปุ่มที่ว่าไว้ สามารถใช้ Mouse Drag จนกว่าจะได้ขนาดที่ต้องการได้ ซึ่งจะไปเรียกใช้ Object Shapes</p>
+        <p> - ปุ่ม Color 1, Color 2 ใช้เลือกสีที่ต้องการ ซึ่งใช้ร่วมกันกับทุก Object ที่ใช้สี โดยทำงานจาก Object ชื่อ ColorPicker และ ColorBtn</p>
+        <h5>Class BlankArea</h5>
+        <p> - เมื่อกดใช้ Brash หรือ  Eraser  แล้วนำ Mouse Drag ลงบน BlankArea  จะมีการเก็บ Data โดยใช้ List ของ Java เป็นตัวเก็บพิกัดที่ลากพร้อมกับทำการวาดเส้นลงบน BlankArea ตามพิกัดเพื่อให้เส้นที่ลากต่อเนื่องกัน จนกระทั่งปล่อย จะถือเป็น 1 Object</p>
+        <p> - เมื่อกดใช้ Triangle, Rect, Oval, Star จะสร้าง Object ขึ้นมาตามที่เลือก ปรากฏขึ้นมาพร้อมกับ Object SelectRect ซึ่งจะเป็นกรอบของรูปร่างที่เลือก และจะถูกเก็บไว้ใน Data List ชื่อ allElements และ กด Click ด้านนอก Shape จะทำให้ SelectRect หายไป</p>
+        <h5>Class SelectRect</h5>
+        <p> - เมื่อถูกเรียกใช้จะสร้างกรอบเส้นปะสีน้ำเงินรูปสีเหลี่ยม โดยดูจากพิกัด Mouse ที่อยู่ใน BlankAera จะทำงานร่วมกับ Object ResizeRect เป็นสีเหลี่ยมเล็กๆ ขนาด 10px เพื่อให้ง่ายต่อการปรับรูปทรง</p>
+        <h5>Class Shapes</h5>
+        <p> - เมื่อถูกเรียกใช้จะรับค่า String มาเพื่อวาดรูปภาพ และ สามารถ Rotate ได้ตามการคำนวนทางคณิตศาสตร์ ทำงานตาม Method ด้านใน</p>
+        <h5>Class ColorPicker</h5>
+        <p> - สร้างมาจาก JDialog และด้านในเป็น JColorChooser</p>
+        <h5>Class ColorPickBtn</h5>
+        <p> - ไว้สำหรับเรียก ColorPicker อีกทีแล้วแสดงสีที่เลือกออกมา</p>
+        <h5>Class ReSizeRect</h5>
+        <p> - เป็นสี่เหลี่ยมเล็กๆขนาด 10 px ไว้สำหรับปรับขนาดของ Shape</p>
+        <h5>Class Brush</h5>
+        <p> - ไว้สำหรับปรับขนาดและสีของพู่กันรูปทรงเป็นวงกลม</p>
+        <h5>Class Eraser</h5>
+        <p> - ทำหน้าที่เหมือนยางลบไว้ลบสิ่งที่ไม่ต้องการออกจากหน้าของ BlankArea สามารถเปลี่ยนสีได้ตามต้องการ</p>
+
+    </div>
+</body>
+</html>

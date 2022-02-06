@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="static/jquary/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="static/bootstrap/bootstrap-5.1.1-dist/css/bootstrap.css">
+    <title>EPT Real Estate</title>
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url("static/fonts/Roboto-Medium.ttf");
+        }
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "roboto";
+        }
+        
+        .menu ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        
+        .menu li {
+            display: inline-block;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .menu li a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: rgb(138, 62, 30);
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        li:hover a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: white;
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-shadow: 2px 2px 13px gold;
+        }
+        
+        .menu li:hover {
+            background-color: rgb(160, 140, 126);
+            cursor: pointer;
+        }
+        
+        .menu {
+            background-color: rgb(229, 190, 133);
+            overflow: auto;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: fixed;
+            z-index: 10;
+        }
+        
+        .alin_right_menu {
+            float: right;
+            margin-right: 15px;
+        }
+        /*DROPdown start*/
+        
+        .dropdown_content {
+            display: none;
+            position: fixed;
+            background-color: rgb(229, 190, 133);
+            box-shadow: 5px 10px 5px #888888;
+            margin-top: 15px;
+            margin-left: -5px;
+            z-index: 10;
+        }
+        
+        .dropdown_menu {
+            z-index: 10;
+        }
+        
+        .dropdown_menu:hover .dropdown_content {
+            display: block;
+        }
+        
+        .dropdown_content ul li {
+            display: block;
+        }
+        
+        .dropdown_content li:hover a {
+            color: white;
+        }
+        
+        .dropdown_content ul li a {
+            color: rgb(138, 62, 30);
+        }
+        /*DROPdown end*/
+        /*search start*/
+        
+        .main {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(113, 137, 178, 0.5);
+            opacity: 0;
+            text-align: center;
+            font-family: roboto;
+            padding: 10px;
+        }
+        
+        .main2 {
+            min-width: 300px;
+            max-width: 320px;
+            height: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: green;
+            opacity: 0;
+            margin-top: 30px;
+        }
+        
+        .main2 .image img {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        .main2 .information {
+            padding: 25px;
+            line-height: 1rem;
+        }
+        
+        .container01 {
+            width: 100%;
+            height: fit-content;
+            min-height: 800px;
+            background-image: url('static/image/house-isolated-field.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .container02 {
+            width: 100%;
+            height: fit-content;
+            min-height: 800px;
+            background-color: lightgreen;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        
+        .container03 {
+            width: 100%;
+            height: fit-content;
+            min-height: 800px;
+            background-color: rgb(201, 201, 201);
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        
+        .searh_box {
+            padding: 20px;
+            border: 1px #333 solid;
+            border-radius: 25px;
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .main h1,
+        b {
+            color: white;
+            text-shadow: 2px 2px 8px black;
+        }
+        
+        .searh_box form input[type=submit],
+        select,
+        input[type=text] {
+            height: 40px;
+        }
+        
+        input[type=text] {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border: 0px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        
+        input[type=submit] {
+            border-radius: 0px 10px 10px 0px;
+        }
+        
+        .my-info-list {
+            margin: 30px;
+        }
+        
+        .info_item {
+            max-width: 500px;
+        }
+        
+        .item_key {
+            width: 50%;
+            display: inline-block;
+            background-color: aqua;
+        }
+        
+        .item_value {
+            width: 50%;
+            display: inline-block;
+        }
+        
+        .property_image {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+        
+        .property_image div {
+            min-width: 300px;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: green;
+            margin-top: 30px;
+        }
+        
+        .property_image div img {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        
+        #map {
+            height: 250px;
+            width: 100%;
+            padding: 20px;
+            background-color: black;
+        }
+        /*search end*/
+    </style>
+    <script>
+        function onOpenprotertyDetail(id) {
+            let PropertyID = id;
+            $.getJSON("https://expert-programming-tutor.com/Downloads/w701/property_detail.php?id=" + PropertyID, function(data) {
+                var items = [];
+                $.each(data, function(key, val) {
+                    items.push("<div class='info_item' id='" + key + "'>" +
+                        "<div class = 'item_key'>" + key + ":" + "</div>" +
+                        "<div class = 'item_value'>" + val + "</div>" +
+                        "</div>");
+                });
+                $(".container03").html("");
+                $("<div/>", {
+                    "class": "my-info-list",
+                    html: items.join("\r\n")
+                }).appendTo(".container03");
+
+                /*
+                $("#image01").attr("src", data.image_01);
+                $("#image02").attr("src", data.image_02);
+                $("#image03").attr("src", data.image_03);
+                $("#image04").attr("src", data.image_04);
+                $("#image05").attr("src", data.image_05);
+                */
+                var items_image = [];
+                items_image.push(`<div> 
+                    <img src ="` + data.image_01 + `" 
+                    alt = "image_property"/>
+                </div>`);
+                items_image.push(`<div> 
+                    <img src ="` + data.image_02 + `" 
+                    alt = "image_property"/>
+                </div>`);
+                items_image.push(`<div> 
+                    <img src ="` + data.image_03 + `" 
+                    alt = "image_property"/>
+                </div>`);
+                items_image.push(`<div> 
+                    <img src ="` + data.image_04 + `" 
+                    alt = "image_property"/>
+                </div>`);
+                items_image.push(`<div> 
+                    <img src ="` + data.image_05 + `" 
+                    alt = "image_property"/>
+                </div>`);
+
+                $("<div/>", {
+                    "class": "property_image",
+                    html: items_image.join("\r\n")
+                }).appendTo(".container03");
+
+                initMap(data.lat, data.lon);
+            });
+        }
+
+        function Itemeplate(id, real_estate_name, LOCATION, property_type,
+            SALE_TERMS, SALE_PRICE, RENT_PRICE, BEDROOMS, UNIT_SIZE, LAND_AREA, image_01) {
+            let template = `
+            <div class="main2">
+                <div class="image">
+                    <img src="{{{image_src}}}" alt="">
+                </div>
+                <div class="information">
+                    <p>{{{real_estate_name}}}</p>
+                    <p>สถานที่ {{{LOCATION}}}</p>
+                    <p>ชนิดของหลักทรัพย์ {{{property_type}}}</p>
+                    <p>สิทธิการขาย {{{SALE_TERMS}}}</p>
+                    <p>ราคาขาย {{{SALE_PRICE}}} บาท</p>
+                    <p>ราคาเช่า {{{RENT_PRICE}}} บาท</p>
+                    <p>จำนวนห้องนอ {{{BEDROOMS}}} ห้อง</p>
+                    <p>{{{UNIT_SIZE}}} ตารางเมตร</p>
+                    <p>{{{LAND_AREA}}} ตารางวา</p>
+                    <p><button id='{{{btn_id}}}' 
+                        class="select_prop_btn btn btn-primary" 
+                        propertyID = '{{{property_id}}}'>แสดงรายละเอียด</buttoon></p>
+                </div>
+            </div>
+            `;
+            template = template.replaceAll("{{{image_src}}}", image_01);
+            template = template.replaceAll("{{{real_estate_name}}}", real_estate_name);
+            template = template.replaceAll("{{{LOCATION}}}", LOCATION);
+            template = template.replaceAll("{{{property_type}}}", property_type);
+            template = template.replaceAll("{{{SALE_TERMS}}}", SALE_TERMS);
+            template = template.replaceAll("{{{SALE_PRICE}}}", SALE_PRICE);
+            template = template.replaceAll("{{{RENT_PRICE}}}", RENT_PRICE);
+            template = template.replaceAll("{{{BEDROOMS}}}", BEDROOMS);
+            template = template.replaceAll("{{{UNIT_SIZE}}}", UNIT_SIZE);
+            template = template.replaceAll("{{{LAND_AREA}}}", LAND_AREA);
+            template = template.replaceAll("{{{btn_id}}}", 'property_' + id);
+            template = template.replaceAll("{{{property_id}}}", id);
+
+            return template;
+        }
+
+        function onSearch() {
+            $(".container02").html("");
+            let search_text = $("#search_text").val();
+            console.log(search_text);
+            let PropertyID = $("#PropertyID").val()
+            $.getJSON("https://expert-programming-tutor.com/Downloads/w701/property_search.php?locate=" + search_text,
+                function(data) {
+                    let y_position = 0;
+                    console.log(data);
+                    for (let i = 0; i < data.length; i++) {
+                        let temp = Itemeplate(data[i].id,
+                            data[i].real_estate_name,
+                            data[i].LOCATION,
+                            data[i].property_type,
+                            data[i].SALE_TERMS,
+                            data[i].SALE_PRICE,
+                            data[i].RENT_PRICE,
+                            data[i].BEDROOMS,
+                            data[i].UNIT_SIZE,
+                            data[i].LAND_AREA,
+                            data[i].image_01);
+
+                        $(".container02").append(temp);
+                    }
+
+                });
+            return false;
+        }
+
+        $(document).ready(function() {
+            $(".select_prop_btn").each(function() {
+                $(this).click(function() {
+                    let prop_id = $(this).attr("propertyID");
+                    onOpenprotertyDetail(prop_id);
+                });
+            });
+        });
+
+        ///google map
+        // In this example, we center the map, and add a marker, using a LatLng object
+        // literal instead of a google.maps.LatLng object. LatLng object literals are
+        // a convenient way to add a LatLng coordinate and, in most cases, can be used
+        // in place of a google.maps.LatLng object.
+        let map;
+
+        function initMap(xlat = -34.397, xlng = 150.644) {
+            const mapOptions = {
+                zoom: 10,
+                center: {
+                    lat: xlat,
+                    lng: xlng
+                },
+            };
+
+            map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            const marker = new google.maps.Marker({
+                // The below line is equivalent to writing:
+                // position: new google.maps.LatLng(-34.397, 150.644)
+                position: {
+                    lat: xlat,
+                    lng: xlng
+                },
+                map: map,
+            });
+            // You can use a LatLng literal in place of a google.maps.LatLng object when
+            // creating the Marker object. Once the Marker object is instantiated, its
+            // position will be available as a google.maps.LatLng object. In this case,
+            // we retrieve the marker's position using the
+            // google.maps.LatLng.getPosition() method.
+            const infowindow = new google.maps.InfoWindow({
+                content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+            });
+
+            google.maps.event.addListener(marker, "click", () => {
+                infowindow.open(map, marker);
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <!-- menu start -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="dropdown_menu">
+                <a href="#">Buy</a>
+                <div class="dropdown_content">
+                    <ul>
+                        <li>
+                            <a href="#">บ้าน</a>
+                        </li>
+                        <li>
+                            <a href="#">คอนโด</a>
+                        </li>
+                        <li>
+                            <a href="#">เชิงพาณิชย์</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Sell</a>
+            </li>
+            <li>
+                <a href="#">Search</a>
+            </li>
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li class="alin_right_menu">
+                <a href="#">Login</a>
+            </li>
+        </ul>
+    </div>
+    <!-- menu end -->
+    <!-- search start -->
+    <div class="container01">
+        <div class="main">
+            <h1>ซื้อ ขาย อสังหา ในประเทศไทย</h1>
+            <b>เราช่วยให้คุณหาบ้านและที่ดินที่ถูกใจคุณ</b>
+            <div class="searh_box">
+                <form action="" onsubmit="return onSearch()">
+                    <input type="text" name="keyword" id="search_text">
+                    <select name="property_type" id="">
+                        <option value="">บ้าน</option>
+                        <option value="">ที่ดิน</option>
+                        <option value="">เชิงพาณิชย์</option>
+                    </select>
+                    <input type="submit" value="search" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container02">
+    </div>
+    <div class="container03">
+    </div>
+    <div id="map">
+    </div>
+
+    <!-- search end -->
+    <script>
+        $(document).ready(function() {
+            function resize_container_02() {
+                $('.container02').height(100 + "px");
+                let y_position = 0;
+                $(".select_prop_btn").each(function() {
+                    var elem = $(this);
+                    var pos = elem.offset().top - elem.parent().parent().parent().parent().offset().top;
+                    console.log("pos: " + pos);
+
+                    if (y_position < pos) {
+                        y_position = pos;
+                    }
+                    $(".select_prop_btn").each(function() {
+                        $(this).click(function() {
+                            let prop_id = $(this).attr("propertyID");
+                            onOpenprotertyDetail(prop_id);
+                        });
+                    });
+
+                });
+                $('.container02').height((y_position + 250) + "px");
+            }
+
+            var menu_height = $(".menu").height();
+            var window_height = $(window).height();
+            var image_height = window_height - menu_height;
+            $(".container01").height(image_height);
+
+            $(window).resize(function() {
+                var menu_height = $(".menu").height();
+                var window_height = $(window).height();
+                var image_height = window_height - menu_height;
+                $(".container01").height(image_height);
+
+                resize_container_02();
+            })
+            anime({
+                targets: '.main',
+                translateY: 250,
+                rotate: '1turn',
+                opacity: [0, 1],
+                backgroundColor: 'hotpink',
+                duration: 800,
+                delay: 2000,
+            });
+            $(document).ready(function() {
+
+                var animationFromMain2 = function() {
+                    let y_translate = 50;
+                    if ($(".main2").attr("animation_finish") != 1) {
+                        let height = parseInt($(".container02").css('height'), 10);
+                        let elecment_margin = parseInt($(".main2").css('margin-top'), 10);
+                        $('.container02').height((height + y_translate + elecment_margin + 100) + "px");
+                        $(".main2").attr("animation_finish", 1);
+                        var timeline = anime.timeline({
+                            easing: 'easeInElastic(5, 5)',
+                            duration: 2000,
+                        }).add({
+                            targets: '.main2',
+                            translateY: y_translate,
+                            rotate: '1turn',
+                            opacity: [0, 1],
+                            backgroundColor: '#ddd',
+                            duration: 800,
+                        });
+
+                        timeline.finished.then(function() {
+                            resize_container_02();
+                        });
+                    }
+                };
+
+                $(window).scroll(function() {
+                    if ($(".main2").length > 0) {
+                        var hT = $('.main2').offset().top,
+                            hH = $('.main2').outerHeight(),
+                            wH = $(window).height(),
+                            wS = $(this).scrollTop();
+                        if (wS > (hT + hH - wH)) {
+                            animationFromMain2();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6o8u22P1c9yQcwfrBkT7P6dHHfLjvkqE&callback=initMap&v=weekly&language=th&region=TH" async></script>
+</body>
+
+</html>

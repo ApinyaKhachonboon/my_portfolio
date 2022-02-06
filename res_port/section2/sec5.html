@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>GIT</h3>
+        <p>หนึ่งใน Version Control เป็นที่นิยมในการทำงานรวมกันของ Programmer และ Developer ทำให้จัดการ code ได้ง่ายเป็นระเบียบนอกจากนี้ยังสามารถใช้ git เป็น web server ได้อีกด้วย โดยการทำงานแยกเป็น 7 ข้อดังนี้</p>
+        <p>1.เก็บประวัติ </p>
+        <p> การแก้ไข</p>
+        <p> - ใครเป็นคนแก้</p>
+        <p> - แก้ตรงไหนบ้าง</p>
+        <p> - ของเดิมเป็นอย่างไร</p>
+        <p>2.รวม code</p>
+        <p>3.สามารถตามดูประวัติได้</p>
+        <p>4.Systematic มีระบบระเบียบในการจัดการ</p>
+        <p>5.Backup</p>
+        <p>6.Rollback</p>
+        <p>7.Track </p>
+        <h4>จะมี Server ซึ่งเรียกว่า Remote และ Repository หรือ folder ของ project นั้นเอง โดยจะมีขั้นตอนหลักตามนี้คือ</h4>
+        <p>1.Clone -> copy Repo จาก Remote </p>
+        <p>2.Commit -> save local เตรียมที่จะ upload ขึ้น Remote</p>
+        <p>3.Unstash -> กรณีมี branch แยกจาก project หลัก</p>
+        <p>4.stash -> กล่องเก็บ code ที่ยังไม่ commit</p>
+        <p>5.Push -> upload code ขึ้น Remote</p>
+        <p>6.fetch -> Refresh ข้อมูลก่อนดึงมา</p>
+        <p>7.Pull -> ดึงข้อมูลจาก Remote มา</p>
+        <p>8.Conflict -> ในกรณีมี conflict ให้แก้ก่อน </p>
+        <p>9.merge -> รวม code กับ project หลัก</p>
+        <h4>การสั่งการทำงานของ GIT ทำได้หลายรูปแบบ เช่นใช้ source tree, git desktop หรือ Git bash ในกรณีเลือกใช้ Git bash จะใช้คำสั่งในการทำงานหลักๆ คือ</h4>
+        <p>1.git config –global user.name -> ใส่ username ของผู้ใช้</p>
+        <p>2.git config –global user.email -> ใส่ email ของผู้ใช้</p>
+        <p>3.git clone ตามด้วย url ของ repo ที่ต้องการจะ clone</p>
+        <p>4.git status -> เช็คว่ามีการแก้ไขไฟล์ไหนใน repo หรือไม่</p>
+        <p>5.git add ตามด้วยชื่อไฟล์ หรือ “.” แทนทุกไฟล์</p>
+        <p>6.git commit -m ตามด้วยคำอธิบาย</p>
+        <p>7.git push origin ตามด้วยชื่อ branch ที่ต้องการ upload</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>Linux</h3>
+        <p>ลีนุกซ์ เป็นระบบปฏิบัติการเช่นเดียวกับ Unix และเป็นระบบปฏิบัติการประเภทฟรีแวร์ (Freeware) คือไม่มีค่าใช้จ่ายในการซื้อโปรแกรม โดยปัจจุบันได้มีการนำระบบปฏิบัติการลีนุกซ์ไปประยุกต์เป็นระบบปฏิบัติการสำหรับงานด้านต่างๆ เช่น งานด้านการคำนวณทางวิทยาศาสตร์ใช้เป็น สถานีบริการ หรือ Server นั้นเอง</p>
+        <p>การทำงานนั้นส่วนใหญ่จะใช้ command line ในการสั่งการทำงานผ่าน bash ซึ่งเป็น interpreter  และ สามารถเปลี่ยนสายธารข้อมูล (stream) ได้เช่น cat 0< text.txt 1> text2.txt ในตัวอย่างนี้แทนที่จะรับ std input ผ่าน keyboard ให้เปี่ยนเป็นไฟล์ text.txt แทนและส่งออก std output เป็น text2.txt นั้นเองส่วน cat นั้นเป็น command line ในการปริ้นเนื้อหาด้านในออกมานั้นเอง ซึ่งตัวเลขต่างแทน 0 คือ std input, 1 คือ std output, และ 2 คือ error นอกจากนี้ยังมี piping แทนด้วยสัญลักษณื vertical bar “|”  ไว้สำหรับใช้งานร่วมกับ command line อื่นซึ่ง piping นั้นจะทำหน้าที่เหมือนการสร้างท่อต่อของการทำงานตัวอย่างเช่น factor 100 | cat > fff.txt  คือการนำผลลัพธิ์ของตัวประกอบ 100 ไปใส่ไว้ในไฟล์ fff.txt นั้นเอง โดยสามารถนำทั้ง 2 เรื่องนี้มาประยุกต์ใช้กับการเขียน bash script ได้ bash script คือชุดคำสั่งที่เขียนเก็บไว้เพื่อให้สะดวกต่อการทำงานในที่นี้จะ มี Shebang ไว้บอกว่าเป็นไฟล์สำหรับ code อะไรในกรณีต้องการเขียนเป็น code อื่นเช่น Python เป็นต้น ตัวอย่างจากเขียน Shebang “#!/usr/bin/python3” </p>
+        <h4>รวม bash command line ที่ใช้บ่อยๆ</h4>
+        <p>ls	-	เช็ค file ใน folder นั้นๆ</p>
+        <p>cd	-	change directory</p>
+        <p>touch	-	ใช้สร้าง file</p>
+        <p>reset	-	clear หน้า terminal</p>
+        <p>cat	-	print เนื้อหาใน file ออกมา</p>
+        <p>nano	-	ใช้เขียน file</p>
+        <p>mkdir	-	สร้าง folder</p>
+        <p>rmdir	-	ลบ folder ใช้ในกรณีเป็น folder ว่าง</p>
+        <p>rm	-	ลบ file หรือ folder</p>
+        <p>pwd	-	ปริ้น directory ปัจจุบัน</p>
+        <p>sudo	-	super user do หรือทำหน้าที่เหมือนเป็น admin</p>
+        <p>chmod	-	change mod หรือไว้ใช้ปรับเปลี่ยน permission ต่างๆ</p>
+        <p>mv	-	ใช้ย้าย file ไปยัง folder ที่ต้องการ</p>
+        <p>cut	-	mทำหน้าที่เหมือน substring -d delimiter คือ เงื่อนไขในการแบ่ง -f คือ ลำดับคำที่ต้องการ</p>
+        <p>xargs	-	จะรับคำสั่งอื่นเข้าไป แล้วรันคำสั่งที่ใส่เข้าไป สามารถใช้ร่วมกับคำสั่งอื่นได้ในรูปแบบ piping</p>
+        <p>wget	-	ใช้โหลดไฟล์จาก Internet </p>
+        <p>และยังมี crontab กรณีต้องการต้องการตั้งเวลาในการทำงานเช่นต้องการให้ bash script ที่เขียนทำงานตามเวลาที่ต้องการอัตโนมัติ </p>
+    </div>
+</body>
+</html>

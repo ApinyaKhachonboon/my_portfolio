@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="static/jquary/jquery-3.6.0.min.js"></script>
+    <title>EPT Real Estate</title>
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url("static/fonts/Roboto-Medium.ttf");
+        }
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "roboto";
+        }
+        
+        .menu ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        
+        .menu li {
+            display: inline-block;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .menu li a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: rgb(138, 62, 30);
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        li:hover a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: white;
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-shadow: 2px 2px 13px gold;
+        }
+        
+        .menu li:hover {
+            background-color: rgb(160, 140, 126);
+            cursor: pointer;
+        }
+        
+        .menu {
+            background-color: rgb(229, 190, 133);
+            overflow: auto;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            position: fixed;
+            z-index: 10;
+        }
+        
+        .alin_right_menu {
+            float: right;
+            margin-right: 15px;
+        }
+        /*DROPdown start*/
+        
+        .dropdown_content {
+            display: none;
+            position: fixed;
+            background-color: rgb(229, 190, 133);
+            box-shadow: 5px 10px 5px #888888;
+            margin-top: 15px;
+            margin-left: -5px;
+            z-index: 10;
+        }
+        
+        .dropdown_menu {
+            z-index: 10;
+        }
+        
+        .dropdown_menu:hover .dropdown_content {
+            display: block;
+        }
+        
+        .dropdown_content ul li {
+            display: block;
+        }
+        
+        .dropdown_content li:hover a {
+            color: white;
+        }
+        
+        .dropdown_content ul li a {
+            color: rgb(138, 62, 30);
+        }
+        /*DROPdown end*/
+        /*search start*/
+        
+        .main {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(113, 137, 178, 0.5);
+            opacity: 0;
+            text-align: center;
+            font-family: roboto;
+            padding: 10px;
+        }
+        
+        .main2 {
+            width: 500px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: green;
+            opacity: 0;
+        }
+        
+        .container01 {
+            width: 100%;
+            height: 1000px;
+            background-image: url('static/image/house-isolated-field.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .container02 {
+            width: 100%;
+            height: 1000px;
+            background-color: lightgreen;
+        }
+        
+        .searh_box {
+            padding: 20px;
+            border: 1px #333 solid;
+            border-radius: 25px;
+            margin-top: 30px;
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+        
+        .main h1,
+        b {
+            color: white;
+            text-shadow: 2px 2px 8px black;
+        }
+        
+        .searh_box form input[type=submit],
+        select,
+        input[type=text] {
+            height: 40px;
+        }
+        
+        input[type=text] {
+            padding-top: 0px;
+            padding-bottom: 0px;
+            border: 0px;
+            border-radius: 10px 0px 0px 10px;
+        }
+        
+        input[type=submit] {
+            border-radius: 0px 10px 10px 0px;
+        }
+        /*search end*/
+    </style>
+</head>
+
+<body>
+    <!-- menu start -->
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="dropdown_menu">
+                <a href="#">Buy</a>
+                <div class="dropdown_content">
+                    <ul>
+                        <li>
+                            <a href="#">บ้าน</a>
+                        </li>
+                        <li>
+                            <a href="#">คอนโด</a>
+                        </li>
+                        <li>
+                            <a href="#">เชิงพาณิชย์</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Sell</a>
+            </li>
+            <li>
+                <a href="#">Search</a>
+            </li>
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li class="alin_right_menu">
+                <a href="#">Login</a>
+            </li>
+        </ul>
+    </div>
+    <!-- menu end -->
+    <!-- search start -->
+    <div class="container01">
+        <div class="main">
+            <h1>ซื้อ ขาย อสังหา ในประเทศไทย</h1>
+            <b>เราช่วยให้คุณหาบ้านและที่ดินที่ถูกใจคุณ</b>
+            <div class="searh_box">
+                <form action="">
+                    <input type="text" name="keyword" id="q">
+                    <select name="property_type" id="">
+                        <option value="">บ้าน</option>
+                        <option value="">ที่ดิน</option>
+                        <option value="">เชิงพาณิชย์</option>
+                    </select>
+                    <input type="submit" value="search" />
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- search end -->
+    <script>
+        $(document).ready(function() {
+            var menu_height = $(".menu").height();
+            var window_height = $(window).height();
+            var image_height = window_height - menu_height;
+            $(".container01").height(image_height);
+
+            $(window).resize(function() {
+                var menu_height = $(".menu").height();
+                var window_height = $(window).height();
+                var image_height = window_height - menu_height;
+                $(".container01").height(image_height);
+            })
+            anime({
+                targets: '.main',
+                translateY: 250,
+                rotate: '1turn',
+                opacity: [0, 1],
+                backgroundColor: 'hotpink',
+                duration: 800,
+                delay: 2000,
+            });
+        });
+    </script>
+</body>
+
+</html>

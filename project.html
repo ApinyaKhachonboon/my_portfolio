@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/my_page.css">
+    
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="my-nav">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link isActive" href="#">Project</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="knowledge.html">Knowledge</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about_me.html">About me</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section class="contents-port">
+        <div class="left-port" id="left-port">
+          <div class="menu-port bg-dark" id="menu-port">
+            <ul class="menu-info">
+              <li class="header">Test My Project</li>
+              <li class="my_item" id="tm1" onclick="menuOpenInfo('game', 'web_site/try_project/Final-bomberman-project')">test web-game (Bomberman)</li>
+              <li class="my_item" id="tm2" onclick="menuOpenInfo('index', 'web_site/try_project/project-w701')">test project-w701</li>
+
+              <li class="header">Web site</li>
+              <li class="my_item" id="w0" onclick="menuOpenInfo('w0', 'web_site')">web-game (Bomberman)</li>
+              <li class="my_item" id="w1" onclick="menuOpenInfo('w1', 'web_site')">project-web(ขายเกมมือสอง)</li>
+              <li class="my_item" id="w2" onclick="menuOpenInfo('w2', 'web_site')">Project w701</li>
+              <li class="my_item" id="w3" onclick="menuOpenInfo('w3', 'web_site')">Wordpress</li>
+              <li class="my_item" id="w4" onclick="menuOpenInfo('w4', 'web_site')">Presta shop</li>
+
+              <li class="header">Java</li>
+              <li class="my_item" id="j1" onclick="menuOpenInfo('j1', 'java')">Ms-Paint (FinalMsPaint)</li>
+              <li class="my_item" id="j2" onclick="menuOpenInfo('j2', 'java')">WordPad (FinalWordPad)</li>
+              <li class="my_item" id="j3" onclick="menuOpenInfo('j3', 'java')">เกมกระต่ายกระโดด (Ev12)</li>
+              <li class="my_item" id="j4" onclick="menuOpenInfo('j4', 'java')">เกมฝึกทักษะการพิมพ์ (EV10)</li>
+              <li class="my_item" id="j5" onclick="menuOpenInfo('j5', 'java')">เกม Tic tac toe (EV9)</li>
+              <li class="my_item" id="j6" onclick="menuOpenInfo('j6', 'java')">เกม 15 puzzle (EV8)</li>
+              <li class="my_item" id="j7" onclick="menuOpenInfo('j7', 'java')">เครื่องคิดเลข (EV6)</li>
+              <li class="my_item" id="j8" onclick="menuOpenInfo('j8', 'java')">โปรแกรมจำลองการซื้อตั๋วหนัง (EV3)</li>
+
+              <li class="header">Python</li>
+              <li class="my_item" id="p1" onclick="menuOpenInfo('p1', 'python')">pac-man</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-port">
+          <div class="information-port">
+            <iframe id="my_iframe" class="information-port" width="100%" height="100%" src="" frameborder="0" onLoad=""></iframe>
+          </div>
+        </div>
+        <button class="openbtn" id="openbtn" onclick="openNav()"><i class="fas fa-bars"></i></button>  
+        <button class="gotop" id="gotop" onclick="go_to_top()"><i class="fas fa-chevron-up"></i></button>     
+    </section>
+    <footer class="bg-dark" id="my_footer">
+      <div class="contact_me">
+        <p>Contact Me</p>
+      </div>
+      <div class="contact_me_info">
+        <a href="https://www.facebook.com/ApinyaKhachonboon"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:apinya.khachonboon@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a><i class="fas fa-mobile-alt"></i> 062-704-7744</a>
+      
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script>
+      //Get the button
+    let mybutton = document.getElementById("gotop");
+    let menu_port = document.getElementById("menu-port");
+    let left_port = document.getElementById("left-port");
+    let my_nav = document.getElementById("my-nav");
+    window.onscroll = function() {scrollFunction()};
+    window.addEventListener('resize', reportWindowSize);
+
+    function reportWindowSize() {
+      if (menu_port.offsetWidth != 250){ 
+        if(document.body.offsetWidth >= 750){
+          menu_port.style.width = "250px";
+        }
+      }
+      else{
+        if(document.body.offsetWidth < 750){
+          menu_port.style.width = "0px";
+        }
+      }
+    }
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+        left_port.style.top = "0px";
+      } else {
+        mybutton.style.display = "none";
+        let h = my_nav.offsetHeight;
+        left_port.style.top = h+"px";
+      }
+    }
+
+    function go_to_top(){
+        $('html, body').animate({
+            scrollTop: 0
+        }, 200);
+    }
+    function openNav() {    
+      if(menu_port.offsetWidth == 0){
+        menu_port.style.width = "250px";
+      }
+      else{
+        menu_port.style.width = "0px";
+      }     
+    }
+    function menuOpenInfo(id, my_type){
+      $("li").each(function() {
+        $(this).removeClass("menu_activate");
+      });
+      $("#"+id).addClass("menu_activate");
+      $("#my_iframe").attr("src", "res_port/"+my_type+"/"+id+".html");
+      
+    }
+
+    function resizeIFrameToFitContent() {
+      let iframe = document.querySelector("#my_iframe");
+      iframe.height = iframe.contentWindow.document.body.scrollHeight + 100 +"px";
+    }
+
+    window.addEventListener('load', function() {
+      let iframe = document.querySelector("#my_iframe");
+
+      iframe.addEventListener('load', function() {
+        //console.log(iframe.contentWindow.document.body.scrollHeight);
+        resizeIFrameToFitContent();
+      });	
+    });
+
+    </script>
+</body>
+</html>

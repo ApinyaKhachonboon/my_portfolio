@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>เว็บขายเกมมือ2 (project_web)</h3>
+        <h3>Class diagram</h3>
+        <img src="img/project_web/class_diagram.PNG" alt="">
+        <h3>index.php</h3>
+        <img src="img/project_web/login.PNG" alt="">
+        <p>หน้า login เมื่อคลิ๊กที่ปุ่ม login จะปรากฏ page ดังกล่าวขึ้นมาให้ทำการ login ตาม username ที่มี ถ้า username หรือ password ผิดระบบจะบอกให้ลองใหม่อีกครั้งถ้า login สำเร็จจะปรากฏข้อมูลของผู้ใช้ รวมถึงยอดเงินคงเหลือของผู้ใช้ ดังรูปด้านล่าง</p>
+        <img src="img/project_web/login2.PNG" alt="">
+        <h3>new.php</h3>
+        <img src="img/project_web/new.PNG" alt="">
+        <p>เมื่อผู้ใช้ทำการ click ในแถบ menu มาใหม่ ก็จะมายังหน้า page ดังรูปด้านบน ในหน้านี้ผู้ใช้สามารถ sort platform ได้โดยการ click ที่เครื่องหมายถูกด้านซ้ายมือตามหัวข้อที่ปรากฏ เมื่อ click เลือกแล้วจะมี product ตามที่ sort ปรากฏขึ้น ในที่นี้ค่าตั้งต้นของ page จะเป็น product ทั้งหมด และเมื่อทำการ click ที่หน้า tile ของ product จะเข้าสู่หน้า buy ดังรูปด้านล่างนี้</p>
+        <h3>buy.php</h3>
+        <img src="img/project_web/product_detail.PNG" alt="">
+        <p>ใน page นี้ผู้ใช้จะเห็นรายละเอียดของ product เลือกทั้งภาพด้านใน ราคา stock ที่เหลือโดยสังเกตุที่เหครื่องหมายถูกในช่อง ADD WISH ผู้ใช้สามารถกด ADD WISH ไว้ก่อนได้โดยยังไม่จำเป็นต้องซื้อ และปุ่ม BUY เมื่อ click จะทำการซื้อ product นั้นๆ ซึ่งทั้ง2อย่างจะถูกบันทึกไว้ในฐานข้อมูลของผู้ใช้ สามารถกดตรวจสอบรายละเอียดได้โดยการ click ที่ชื่อของผู้ใช้ด้านบนมุมขวา จะปรากฏหน้าตารางดังรูปด้านล่าง</p>
+        <h3>user_detail.php</h3>
+        <img src="img/project_web/user_detail.PNG" alt="">
+        <p>ในตารางจะเห็นประวัติการซื้อ/สถานะ และสิ่งที่อยากได้หรือ ADD WISH ที่ผู้ใช้เลือกไว้นั้นเองถ้าต้องการออกจากหน้าดังกล่าวให้ click ที่แถบด้านบนอันไหนก็ได้ ในตัวอย่างจะเลือกไปที่ page ข้อเสนอพิเศษเพื่อจะอธิบายใน page ต่อไป</p>
+        <h3>deal.php</h3>
+        <img src="img/project_web/deal.PNG" alt="">
+        <p>ใน page นี้จะแสดงข้อมูลของ product ที่จัด promotion ในราคาพิเศษซึ่งจะแตกต่างจากหน้ามาใหม่เล็กน้อย ซึ่งจะมีแถบคาดสีแดง Save 75% หมายถึงเปอร์เซนต์ที่ลดจากราคาของ product เดิมไป 75 % นั้นเองและจะมีราคาที่ลดจากเปอร์เซนต์ดังกล่าวแล้วเป็นอังษรสีแดง ถ้าผู้ใช้ต้องการจะซื้อ product นี้ก็ทำการ click ที่ product ต้องการจะซื้อและจะเข้าสู่หน้าของ product detail ที่อธิบายไว้ด้านบน</p>
+        <p>bestseller.php</p>
+        <img src="img/project_web/best_sell.PNG" alt="">
+        <p>ในหน้านี้แต่ละ product จะแสดงว่าขายไปแล้วเท่าไร โดยจะเรียงลำดับตาม product ที่ขายได้มากที่สุดไปถึงน้อยที่สุด รวมถึงในกรณีที่ product จัด promotion หรือ ลดราคาอยู่ก็จะปรากฏให้เห็นด้วย ถ้าผู้ใช้ต้องการจะสั่งซื้อสินค้าก็สามารถclickเลือกที่ product ตามต้องการได้ ซึ่งจะนำไปสู่หน้า buy ตามที่เคยกล่าวไว้ด้านบน</p>
+    </div>
+</body>
+</html>

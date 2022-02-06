@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/web_style.css">
+    <style>
+        footer{
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .stay-container{
+            display:flex;
+            justify-content:center;
+        }
+
+        .stay p{
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+        .stay{
+            max-width: 720px;
+            padding-left: 1.2em;
+            padding-right: 1.2em;
+        }
+        #map{
+            width: 100%;
+            height: 300px;
+        }
+        .here{
+            margin-top: 2em;
+        }
+        .wrong{
+            color: red;
+            font-weight: 500;
+            font-size:1.2em;
+        }
+
+        @media screen and (max-height:800px) {
+            footer{
+                position: relative;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="menu collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="lesson.html">Lesson</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="workshop.html">Workshop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">About us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section>
+        <div class="stay-container">
+            <div class="stay">
+                <div><p>ติดต่อเรา</p></div>
+                <form class="form">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Message</label>
+                        <textarea class="form-control" id="message" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1"></label>
+                        <button type="submit" class="btn btn-primary" id="submit" value="send" style="width:100%" onclick="return form_validate()"><i class="fas fa-paper-plane" style="font-size: large;"></i></button>
+                    </div>
+                </form>
+                <div class="here"><p>ที่อยู่ 30 ปากทางเข้าหมู่บ้านเดอะวอเตอร์เฮ้าส์ ถ.บางบอน3 ซอยบางบอน3ซอย12 หลักสอง บางแค กทม. 10160</p></div>
+                <div id="map"></div>        
+            </div>             
+        </div>
+
+    </section>
+    <footer>
+        <div class="tag">
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    html
+               </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    css
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    javascript
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    jQuery
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    font-awesome
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    graph
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    google
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    bootstrap
+                </button>
+            </div>
+            <div class="btn-box">  
+                <button type="button" class="btn btn-info text-white m-2">
+                    anime.js
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white  m-2">
+                    Workshop
+                </button>
+            </div>
+        </div>
+        <div class="foot bg-dark text-white">
+            <div>
+                <p>All rights reserved 2021</p>
+            </div>
+            
+            <div class="main-logo">           
+                <div class="logo">
+                    <p><a class="text-white" href="#"><i class="fab fa-twitter"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-google-plus-g"></i></a></i></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-facebook"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-instagram"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var mybutton = document.getElementById("gotop");
+        window.onscroll = function() {scrollFunction()};
+        let map;
+
+        function initMap() {
+        const mapOptions = {
+            zoom: 15,
+            center: { lat: 13.672110729096602, lng: 100.38622075988037 },
+        };
+
+        map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        const marker = new google.maps.Marker({
+            // The below line is equivalent to writing:
+            // position: new google.maps.LatLng(-34.397, 150.644)
+            //13.672110729096602, 100.38622075988037
+            position: { lat: 13.672110729096602, lng: 100.38622075988037 },
+            map: map,
+        });
+        // You can use a LatLng literal in place of a google.maps.LatLng object when
+        // creating the Marker object. Once the Marker object is instantiated, its
+        // position will be available as a google.maps.LatLng object. In this case,
+        // we retrieve the marker's position using the
+        // google.maps.LatLng.getPosition() method.
+        const infowindow = new google.maps.InfoWindow({
+            content: "<p>Marker Location:" + marker.getPosition() + "</p>",
+        });
+
+        google.maps.event.addListener(marker, "click", () => {
+            infowindow.open(map, marker);
+        });
+        }
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        anime({
+            targets: '.btn-box',
+            rotate: '1turn',
+            duration: 800
+          });
+        function go_to_top(){
+            $('html, body').animate({
+                scrollTop: 0
+            }, 200);
+        }
+
+        function form_validate(){
+            $(".wrong").remove();
+            let check = true;
+            if($("#email").val().trim() == ""){
+                $("#email").after("<span class='wrong'>*กรุณากรอกข้อมูลให้ครบถ้วน</span>");
+                check = false;
+            }
+            if($("#message").val().trim() == ""){
+                $("#message").after("<span class='wrong'>*กรุณากรอกข้อมูลให้ครบถ้วน</span>");
+                check = false;
+            }
+            if(check){
+                return true;
+            }
+            return false;
+        }
+          
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6o8u22P1c9yQcwfrBkT7P6dHHfLjvkqE&callback=initMap&v=weekly&language=th&region=TH" async></script>
+</body>
+</html>

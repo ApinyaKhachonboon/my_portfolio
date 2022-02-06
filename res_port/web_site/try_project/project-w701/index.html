@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/web_style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample08" aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="menu collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="lesson.html">Lesson</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="workshop.html">Workshop</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="about_us.html">About us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <section>
+        <div class="containter">
+            <div class="information1">
+                <h2>http คืออะไร?</h2>
+                <p>http ย่อมาจาก Hypertext Transfer Protocol คือโพรโทคอลสื่อสารผ่าน internet ใช้ในการรับและส่งข้อมูล ในการแลกเปลี่ยนข้อมูลระหว่าง Client และ Server โดยการส่งจาก Client ไป Server จะเรียกว่า http request ส่วนข้อมูลที่ Server ตอบกลับมาที่ Client จะเรียกว่า http Response</p>
+                <img src="static/image/index/http1.png" alt="http">
+            </div>
+        </div>
+        <div class="containter">
+            <div class="information1">
+                <h2>Request Method</h2>
+                <p>http request จะกำหนด action ที่จะกระทำต่อข้อมูล method จะมีลักษณะเป็นตัวพิมพ์ใหญ่ทั้งหมดเสมอ</p>
+                <p>โดย method ที่สำคัญมี 4 ตัวคือ GET, POST, PUT, DELETE</p>
+                <ul>
+                    <li>GET — เป็นการเรียกรับข้อมูลจาก URI ที่กำหนด method GET ควรใช้ในการดึงข้อมูลเท่านั้นและต้องไม่มีผลกระทบใด ๆ กับข้อมูล</li>
+                    <li>POST — ใช้สำหรับการสร้างข้อมูลใหม่โดยส่งข้อมูลผ่าน body</li>
+                    <li>PUT — ใช้สำหรับแทนที่ข้อมูลที่มีทั้งหมดด้วยข้อมูลใหม่ที่ส่งขึ้นไป</li>
+                    <li>DELETE — ใช้สำหรับลบข้อมูลที่มีอยู่ ของเป้าหมายที่กำหนดโดย URI</li>
+                </ul>
+            </div>
+        </div>
+        <div class="containter">
+            <div class="information1">
+                <h2>Request Header Fields</h2>
+                <p>header จะให้ ผู้ใช้ สามารถส่งผ่านข้อมูลเพิ่มเติมเกี่ยวกับ Request ของผู้ใช้ เช่น เป็นภาษาอะไร, ชนิดข้อมูลเป็นแบบไหน และนี่คือรายชื่อของ header ที่สำคัญบางอย่างที่สามารถเลือกใช้ได้</p>
+                <p>โดย method ที่สำคัญมี 4 ตัวคือ GET, POST, PUT, DELETE</p>
+                <ul>
+                    <li>Accept-Charset</li>
+                    <li>Accept-Encoding</li>
+                    <li>Accept-Language</li>
+                    <li>Connection</li>
+                    <li>Content-Length</li>
+                    <li>Content-Type</li>
+                    <li>Cookie</li>
+                    <li>Host</li>
+                    <li>User-Agent</li>
+                </ul>
+                <h2>Watch This</h2>
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/iYM2zFP3Zn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <button class="gotop" id="gotop" onclick="go_to_top()"><i class="fas fa-chevron-up"></i></button>
+    </section>
+    <footer>
+        <div class="tag">
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    html
+               </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    css
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    javascript
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    jQuery
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    font-awesome
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    graph
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    google
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white m-2">
+                    bootstrap
+                </button>
+            </div>
+            <div class="btn-box">  
+                <button type="button" class="btn btn-info text-white m-2">
+                    anime.js
+                </button>
+            </div>
+            <div class="btn-box">
+                <button type="button" class="btn btn-info text-white  m-2">
+                    Workshop
+                </button>
+            </div>
+        </div>
+        <div class="foot bg-dark text-white">
+            <div>
+                <p>All rights reserved 2021</p>
+            </div>
+            
+            <div class="main-logo">           
+                <div class="logo">
+                    <p><a class="text-white" href="#"><i class="fab fa-twitter"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-google-plus-g"></i></a></i></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-facebook"></i></a></p>
+                    <p><a class="text-white" href="#"><i class="fab fa-instagram"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="static/anime-master/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        var mybutton = document.getElementById("gotop");
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+        anime({
+            targets: '.btn-box',
+            rotate: '1turn',
+            duration: 800
+          });
+          function go_to_top(){
+              $('html, body').animate({
+                  scrollTop: 0
+              }, 200);
+          }
+          
+    </script>
+</body>
+</html>

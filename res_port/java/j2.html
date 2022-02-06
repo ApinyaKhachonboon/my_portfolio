@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>WordPad (FinalWordPad)</h3>
+        <img src="img/Word_Pad/word_pad.jpg" alt="">
+        <h3>Class diagram</h3>
+        <img src="img/Word_Pad/WordPad.PNG" alt="">
+        <h5>ใช้รูปแบบการเขียนแบบ OOP</h5>
+        <h5>Class WordPadGUI</h5>
+        <p> - ปุ่มทุกปุ่มด้านซ้ายทั้งหมด จะส่งค่าตัวแปรรูปแบบเป็น SimpleAttributeSet เพื่อไปจัดการปรับค่าในแต่ละตัวอักษรใน JTextPane เนื่องจากใน JTextPane ไม่สารารถ Warp Text ได้จึงต้องเพิ่ม Class WrapEditorKit ซึ่งสร้างมาจาก StyleEditorKit มาเพื่อจัดการเรื่องนี้</p>
+        <p> - ปุ่มด้านขวาจะจัดการเรื่องตำแหน่งของตัวอักษร ซึ่งจะแบ่งไปแต่ละ Paragraph จะแบ่งโดย Text ด้านใน JTextPane ด้วย “\n” เพื่อให้ผู้ใช้ได้ใช้งานอย่างอิสระ และ มี Object Ruler ที่ช่วยควบคุบตำแหน่งของแต่ละ Paragraph ด้วย</p>
+        <p> - ปุ่ม undo ทำงานตาม Object UndoManager ซึ่งจะดูแลเรื่องจากย้อนขั้นตอนการทำของ JTextPanel สามารถใช้ Shortcut Ctrl+z แทนได้</p>
+        <p> - ปุ่ม save ทำหน้าที่ Save ข้อมูลใน JTextPane ทั้งหมดในรูปแบบไฟล์สกุล .TFF</p>
+        <p> - ปุ่ม load ทำหน้าที่ Load ข้อมูลจากไฟล์สกุล .TFF มาแสดงผลบน JTextPane</p>
+        <h5>Class WarpEditorKit</h5>
+        <p> - ทำหน้าที่ warp text ให้ถูกต้องตรงกับขนาดที่ต้องการของแต่ละ paragraph ซึ่งจะไปเรียกใช้ WrapColumnFactory อีกที</p>
+        <h5>Class WrapColumnFactory</h5>
+        <p> - จะเช็คว่า text ที่อยู่ใน JTextPane อยู่ในตำแหน่งไหนและจบ paragraph หรือยังถ้าถึงขอบเขตที่กำหนดจะทำการขึ้นบรรทัดใหม่เอง</p>
+        <h5>Class WarpLebelView</h5>
+        <p> - เอาไว้ไม่ให้ text แสดงผลผิดตำแหน่งจะทำให้ text บัคได้</p>
+        <h5>Class FontCellRenderer</h5>
+        <p> - เช็ค Font แต่ละ cell ให้แสดงในตำแหน่งที่ถูกต้อง</p>
+        <h5>Class MyParagraphView</h5>
+        <p> - ใช้สำหรับปรับทุก Attribute ใน paragraph นั้นๆ และจะคืนค่าตามตำแหน่งของ Curser จะทำงานร่วมกับ Ruler ด้วย </p>
+        <h5>Class Ruler </h5>
+        <p> - ในการควบคุมตำแหน่งของแต่ละ Paragraph นั้นจะทำงานตาม ตำแหน่งของ Curser ของแต่ละ Paragraph ซึ่งจะรับค่าของเดิมเพื่อย้าย Ruler ให้ตรงกับค่าของแต่ละ paragraph ได้จำไว้ด้วยด้านใน จะมี Shape รูปสามเหลี่ยมเพื่อให้ผู้ใช้เลื่อนได้สะดวก</p>
+        <h5>Class TriangleShape</h5>
+        <p> - ทำหน้าที่แสดงรูปสามเหลี่ยมสีดำบน Ruler เพื่อไว้จัด Box view ของแต่ละ Paragraph</p>
+        <h5>Class ColorPickerBtn</h5>
+        <p> - ใช้กำหนดค่าสี และ Highlight ของตัวอักษรซึ่งรับ Parameter มาจาก JColorChooser เพื่อแสดงค่าสีที่เลือกให้เห็นอีกที</p>
+
+    </div>
+</body>
+</html>

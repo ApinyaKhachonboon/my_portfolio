@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPT Real Estate</title>
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url("static/fonts/Roboto-Medium.ttf");
+        }
+        
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: "roboto";
+        }
+        
+        .menu ul {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+        
+        .menu li {
+            display: inline-block;
+            padding: 5px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .menu li a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: rgb(138, 62, 30);
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        
+        li:hover a {
+            overflow: auto;
+            text-decoration-line: none;
+            color: white;
+            font-weight: 1000;
+            height: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-shadow: 2px 2px 13px gold;
+        }
+        
+        .menu li:hover {
+            background-color: rgb(160, 140, 126);
+            cursor: pointer;
+        }
+        
+        .menu {
+            background-color: rgb(229, 190, 133);
+            overflow: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .alin_right_menu {
+            float: right;
+        }
+        /*DROPdown start*/
+        
+        .dropdown_content {
+            display: none;
+            position: fixed;
+            background-color: rgb(229, 190, 133);
+            box-shadow: 5px 10px 5px #888888;
+            margin-top: 15px;
+            margin-left: -5px;
+        }
+        
+        .dropdown_menu:hover .dropdown_content {
+            display: block;
+        }
+        
+        .dropdown_content ul li {
+            display: block;
+        }
+        
+        .dropdown_content li:hover a {
+            color: white;
+        }
+        
+        .dropdown_content ul li a {
+            color: rgb(138, 62, 30);
+        }
+        /*DROPdown end*/
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li class="dropdown_menu">
+                <a href="#">Buy</a>
+                <div class="dropdown_content">
+                    <ul>
+                        <li>
+                            <a href="#">บ้าน</a>
+                        </li>
+                        <li>
+                            <a href="#">คอนโด</a>
+                        </li>
+                        <li>
+                            <a href="#">เชิงพาณิชย์</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">Sell</a>
+            </li>
+            <li>
+                <a href="#">Search</a>
+            </li>
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li class="alin_right_menu">
+                <a href="#">Login</a>
+            </li>
+        </ul>
+    </div>
+
+</body>
+
+</html>

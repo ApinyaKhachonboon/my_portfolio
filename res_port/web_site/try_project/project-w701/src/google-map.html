@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/src.css">
+    <div class="container">
+        <div class="content">
+            <h2>Google Map API</h2>
+            <p>
+                Google map API คือการเรียกใช้บริการ Google map 
+                ผ่าน Google map API โดยขั้นตอนแรกนั้นต้องไปที่ url 
+                <a href="https://console.cloud.google.com/" target="_blank" rel="noopener noreferrer">https://console.cloud.google.com/</a>
+                ก่อนถ้ายังไม่มี gmail ให้ทำการสมัครให้เรียบร้อยต่อมาเข้ามาที่หน้า home และทำการ new project ขึ้นมาหากยังไม่มี เมื่อสร้าง project เรียบร้อยจะปรากฏดังรูปด้านล่าง
+            </p>
+            <p><img src="image/googleMap/gm01.PNG" alt="gm-map" srcset=""></p>
+            <p>เสร็จแล้วให้เลือก project พึ่งสร้าง เลือก open จากนั้นกดที่แถบ navigation menu เลื่อนลงมาจนกว่าจะเจอ Google Maps Platform แล้วเลือกที่ APIs ต่อมาให้เลือกที่ Maps JavaScript API เนื่องจากเราต้องการใช้เป็นแบบ JavaScript สำหรับ website </p>
+            <p><img src="image/googleMap/gm03.PNG" alt="gm-map" srcset=""></p>
+            <p>ต่อมาให้เลือก Enable และรอจนกว่าจะเสร็จ</p>
+            <p><img src="image/googleMap/gm04.PNG" alt="gm-map" srcset=""></p>
+            <p>เมื่อเสร็จแล้วให้เราเลือกที่ navigation > Google Maps Platform อีกครั้งแต่คราวนี้เลือกไปที่ Credentials เพื่อทำการ generate key สำหรับ google map </p>
+            <p><img src="image/googleMap/gm05.PNG" alt="gm-map" srcset=""></p>
+            <p>หลังจากนั้นให้เลือกที่ Credentials in APIs & Services เพื่อทำการเริ่มสร้าง key</p>
+            <p><img src="image/googleMap/gm06.PNG" alt="gm-map" srcset=""></p>
+            <p>เลือก CREATE CREDENTIALS > APIs Key จะได้รับ Key ตามรูปด้านล่าง </p>
+            <p><img src="image/googleMap/gm07.PNG" alt="gm-map" srcset=""></p>
+            <p>ต่อมาเราจะทำการทดสอบใช้ google map โดยให้แสดงในลักษณะการปักหมุดในแผนที่ โดยไปที่ url ด้านล่าง  https://developers.google.com/maps/documentation/javascript/examples/map-latlng-literal เพื่อไปดู example code และทำการ copy แถบที่เป็น JavaScript และ HTML ทำการแก้ไข lat, lng ที่ต้องการ เปลี่ยนให้เป็นภาษาไทยและทำการวาง API เราพึ่งสร้างเข้าไปใน code</p>
+            <p><img src="image/googleMap/gm08.PNG" alt="" srcset=""></p>
+            <p>รูปด้านบนคือ code ตัวอย่าง HTML ที่ต้อง copy ไปวางที่ project ที่เราต้องการ</p>
+            <p><img src="image/googleMap/gm09.PNG" alt="" srcset=""></p>
+            <p>ด้รูปด้านบนคือ code ตัวอย่าง HTML ที่ต้อง copy ไปวางที่ project ที่เราต้องการ</p>
+            <p><img src="image/googleMap/gm10.PNG" alt="" srcset=""></p>
+            <p>ด้านบนคือผลลัพธิ์ที่เราทำการทดสอบ ซึ่งได้ปรากฏสถานที่ที่เราปักหมุดไว้ถูกต้อง</p>
+        </div>
+    </div>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 40px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h5{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+            font-size: 1em;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>โปรแกรมจำลองการซื้อตั๋วหนัง (EV3)</h3>
+        <img src="img/EV3/ClassDiagram.jpg" alt="">
+        <h3>Class diagram</h3>
+        <img src="img/EV3/ev3_p1.PNG" alt="">
+        <h5>Class Page1</h5>
+        <p> - เมื่อถูกเรียกใช้จะปรากฏรูปโปสเตอร์ของหนังโดยนำมาจากไฟล์ .JPG ตามลำดับ ส่วน Attribute ต่างๆในคลาสจะรับมาจาก .TXT ไฟล์โดยอ่านจาก method readFile() เมื่อกดที่ปุ่มรอบหนังจะนำไปสู่ Page2</p>
+        <img src="img/EV3/ev3_p2.PNG" alt="">
+        <h5>Class Page2</h5>
+        <p> - โดยคลาสนี้จะสร้าง Class seat แทนที่นั่งขนาด 7*15 ขึ้นมาและเมื่อทำการเลือกที่นั่ง สามารถเลือกได้มากกว่า 1 ที่นั่งเมื่อเลือกเสร็จจะมีการเก็บข้อมูลของราคาที่นั่งและจำนวนที่เลือกด้านบน บางที่นั่งจะปรากฏเป็นสีเทาเกิดจากได้มีการขายที่นั่งดังกล่าวไปก่อนหน้าแล้วไม่สามารถเลือกได้อีก โดยนำข้อมูลจาก .TXT ไฟล์</p>
+        <p> - เมื่อทำการเลือกที่นั่งเรียบร้อยให้กดที่ปุ่ม OK จะนำไปสู่ Page3</p>
+        <h5>Class seat</h5>
+        <p> - จะถูกเรียกโดยคลาส Page2 ด้านในจะมี Attribute เกี่ยวกับ สี ขนาด ตำแหน่ง และ สถานะ</p>
+        <img src="img/EV3/ev3_p3.PNG" alt="">
+        <h5>Class Page3</h5>
+        <p> - ในคลาสนี้จะแสดงข้อมูลที่ผู้ใช้เลือกไว้ในหน้า Page1 และ Page2 มาแสดงผลลัพธิ์ก่อนจะทำการ Print Ticket และเอาค่าจากตัวแปรเก็บลง .TXT ไฟล์</p>
+        <img src="img/EV3/ev3_p4.PNG" alt="">
+        <h5>Class PrintPage</h5>
+        <p> - จะนำข้อมูลจากตัวแปรมาแสดงในหน้านี้เป็นอันเสร็จขั้นตอนการซื้อตั๋วหนัง</p>
+    </div>
+</body>
+</html>

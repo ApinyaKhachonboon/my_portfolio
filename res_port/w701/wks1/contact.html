@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About US</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: "roboto";
+            src: url(static/font/Roboto-Bold.ttf);
+        }
+        
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: "roboto";
+        }
+        
+        .menu {
+            border: 1px solid black;
+            background-color: black;
+            height: 50px;
+        }
+        
+        .footer {
+            background-color: black;
+            height: 150px;
+        }
+        
+        .content {
+            background-color: #92d2ee;
+            height: auto;
+        }
+        
+        .row {
+            background-color: #92d2ee;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .row>div {
+            height: 400px;
+            width: 400px;
+            box-sizing: border-box;
+            margin: 30px;
+            padding: 30px;
+            color: white;
+            font-size: 1.2em;
+            transition: all 0.5s ease;
+        }
+        
+        .row>.left {
+            background-image: url("static/image/operator.jpg");
+            background-repeat: no-repeat;
+            background-size: 150%;
+            background-position-x: +85%;
+            border-radius: 200px;
+            overflow: hidden;
+        }
+        
+        .row>.right {
+            color: #02618a;
+        }
+        
+        .row>.form {
+            background-color: #02618a;
+            width: 860px;
+            height: auto;
+            color: rgb(153, 245, 245);
+        }
+        
+        .row>div>h2 {
+            text-align: center;
+        }
+        
+        .row>.left.left_overlay {
+            visibility: hidden;
+        }
+        
+        .row>.left>.left_overlay {
+            visibility: visible;
+            width: 150%;
+            height: 200%;
+            box-sizing: border-box;
+            transform: translate(-25%, -25%);
+            background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 150%);
+        }
+        
+        .row>.left:hover .left_overlay {
+            background-image: radial-gradient(rgba(0, 0, 0, 0) 0%, rgb(238, 238, 101) 150%);
+            transition: all 0.5s ease;
+        }
+        
+        .big_icon {
+            font-size: 2em;
+        }
+        
+        .text_center {
+            text-align: center;
+        }
+        
+        .row>.form>input[type="text"],
+        input[type="phone"],
+        input[type="email"] {
+            width: 100%;
+            font-size: 1.2em;
+            border-radius: 0.3em;
+        }
+        
+        .row>.form>input[type="text"]:focus,
+        input[type="phone"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: red;
+            border-width: 3px;
+        }
+        
+        textarea {
+            width: 100%;
+            font-size: 1.2em;
+            height: 4.5em;
+            border-radius: 0.3em;
+        }
+        
+        .row>.form>input[type="submit"] {
+            font-size: 1.5em;
+            background-color: orangered;
+            color: yellow;
+            border: 1px solid yellow;
+            padding: 15px 20px;
+            cursor: pointer;
+        }
+        
+        .row>.form>input[type="submit"]:hover {
+            background-color: limegreen;
+            color: blue;
+            transition: all .5s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu"></div>
+    <div class="content">
+        <div class="row">
+            <div class="left">
+                <div class="left_overlay"></div>
+            </div>
+            <div class="right">
+                <h1>ติดต่อเรา</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores tempore molestiae pariatur modi! Incidunt mollitia expedita sunt eum, ratione magni molestias? Ex facere placeat blanditiis provident assumenda perferendis officiis culpa.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form">
+                <h2>
+                    เชิญส่งข้อความหาทีมงานของเรา
+                </h2>
+                <form action="contact.php" method="get"></form>
+                <label for="input_name">
+                    Name:
+                </label>
+                <br/>
+                <input type="text" name="input_name" id="input_name">
+                <label for="input_email">
+                    Email:
+                </label>
+                <br/>
+                <input type="email" name="input_email" id="input_email">
+                <label for="input_email">
+                    Phone:
+                </label>
+                <br/>
+                <input type="phone" name="input_phone" id="input_phone">
+                <label for="message">
+                    Message:
+                </label>
+                <br/>
+                <textarea name="message" id="message"></textarea>
+                <br/>
+                <input type="submit" name="submit_contact_us" id="submit_contact_us" value="SEND">
+            </div>
+        </div>
+    </div>
+    <div class="footer ">
+    </div>
+</body>
+
+</html>

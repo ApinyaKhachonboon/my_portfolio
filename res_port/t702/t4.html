@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>S3</h3>
+        <p>S3 คือบริการ storage ของ Amazon ที่ราคาถูก แต่ก็ต้องแลกมากับการทำานที่ช้ากว่าตัวอื่นๆ ในการ create S3 ให้ เลือกที่แถบ service ต่อมาเลือกที่ S3 ดังรูปด้านล่าง</p>
+        <img src="img/T702/S3/S3_1.PNG" alt="">
+        <p>ขั้นตอนแรกให้เราสร้าง bucket ขึ้นมาก่อน โดยกดที่ create bucket ตั้งชื่อ bucket ที่ต้องการและกด create bucket ได้เลย ตามรูปด้านล่าง</p>
+        <img src="img/T702/S3/S3_2.PNG" alt="">
+        <p>ต่อมาให้เลือกที่ไป bucket ที่พึ่งสร้างขึ้นมา และทำการสร้าง folder และ upload file ขึ้นไปเพื่อทำการทดลองในขั้นตอนไป ต่อมาเราจะทำการลง php composer ตามขั้นตอนต่อไปนี้</p>
+        <h4>ขั้นตอนที่ 1 ให้ลงเครื่องมือที่ต้องใช้ และ ทำการ update ให้เรียบร้อยก่อน โดยพิมพ์</h4>
+        <p>Sudo apt update</p>
+        <p>sudo apt install wget php-cli php-zip unzip</p>
+        <h4>ขั้นตอนที่ 2 ให้ทำการ download composer installer โดยพิมพ์</h4>
+        <p>cd ~</p>
+        <p>curl -sS https://getcomposer.org/installer -o composer-setup.php</p>
+        <h4>ขั้นตอนที่ 3 เช็คการเข้ารหัสมา link ที่ Download นั้นถูกต้องหรือไม่เก็บรหัสเก็บไว้ในตัวแปร HASH ให้พิมพ์</h4>
+        <p>HASH=`curl -sS https://composer.github.io/installer.sig`</p>
+        <h4>ขั้นตอนที่ 4 ให้เช็คว่ารหัสตรงกันหรือไม่ถ้าตรงกันจะได้ Installer verified</h4>
+        <p>php -r "if (hash_file('SHA384', 'composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"</p>
+        <h4>ขั้นตอนที่ 5 ทำการ install composer  โดยพิมพ์ </h4>
+        <p>sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer</p>
+        <h4>ขั้นตอนที่ 6 ให้พิมพ์ composer ตรวจสอบว่าได้ Install composer เรียบร้อยแล้ว และจะได้ข้อความตามรูปด้านล่าง</h4>
+        <img src="img/T702/S3/S3_3.PNG" alt="">
+        <p>ต่อมาให้ทำการ ลง SDK ของ Amazon โดยพิมพ์ </p>
+        <p>cd /var/www/html</p>
+        <p>composer require aws/aws-sdk-php</p>
+        <p>จะได้ directory ชื่อ vender ต่อมาให้ crate role ใน IAM เพื่อใช้ในการ Access S3 โดยเลือกตามรูปด้านล่าง </p>
+        <img src="img/T702/S3/S3_4.PNG" alt="">
+        <p>เลือก Users และ กดที่ Add User ตามรูปด้านล่าง</p>
+        <img src="img/T702/S3/S3_5.PNG" alt="">
+        <p>ต่อมาให้ตั้งชื่อ User และติ๊กเลือกที่ Programmatic access เสร็จแล้วกด next permission</p>
+        <img src="img/T702/S3/S3_6.PNG" alt="">
+        <p>หลังจากนั้นให้ create group ตั้งชื่อ และพิมพ์ s3 ติ๊กถูกที่ s3 Full access ตามรูปด้านล่าง</p>
+        <img src="img/T702/S3/S3_7.PNG" alt="">
+        <p>กด next ไปเรื่อยๆ จนกระทั่งเสร็จจะได้ ID key และ secret access key ให้ copy เก็บเอาไว้เพื่อไว้นำไปใช้กับ SDK อีกทีจะได้ดังรูปด้านล่าง</p>
+        <img src="img/T702/S3/S3_8.PNG" alt="">
+        <p>จากนั้นพิมพ์ตาม code ด้านล่างใส่ key, secret, bucket, file ตามที่ตนเองตั้งไว้เพื่อทำการทดลอง pre-signed s3 และนำรูปใน s3 ออกมาโชว์</p>
+        <img src="img/T702/S3/S3_9.PNG" alt="">
+        <p>จากนั้นให้ทดลองเปิดไฟล์ที่พึ่งสร้างมาบน web browser จะได้ผลลัพธิ์ตามรูปด้านล่างเป็นอันจบการทดลองใช้ S3</p>
+        <img src="img/T702/S3/S3_10.PNG" alt="">
+    </div>
+</body>
+</html>

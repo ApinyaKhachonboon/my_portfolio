@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .my_content{
+            text-align: center;
+        }
+        .my_content p{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content h4{
+            text-align: justify;
+            padding-left: 20px;
+            padding-right: 20px;
+            overflow: hidden;
+        }
+        .my_content img{
+            max-width: 400px;
+            max-height: 800px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="my_content">
+        <h3>EFS (Elastic File System)</h3>
+        <p>EFS คือ บริการ storage ของ Amazon ในรูปแบบของ NFS (Network File System) โดยให้เลือกตามรูปด้านล่าง</p>
+        <img src="img/T702/EFS/EFS.PNG" alt="">
+        <p>หลังจากนั้นให้เลือก create file system ต่อมาให้ตั้งชื่อและเลือก VPC ที่ต้องการและกด create ดังรูปด้านล่าง </p>
+        <img src="img/T702/EFS/EFS1.PNG" alt="">
+        <p>ต่อมาให้กลับไปที่ EC2 ที่ต้องการเชื่อมต่อกับ EFS ให้เพิ่ม protocol NFS ลงใน Security group ดังรูปด้านล่าง</p>
+        <img src="img/T702/EFS/EFS2.PNG" alt="">
+        <p>เมื่อทำการ save rule เรียบร้อยกลับไปที่ EFS เลือก security ให้ตรงกัน จากนั้นให้ใช้ putty เชื่อมต่อกับ EC2 และทำการลงเครื่องมือที่จำเป็นบนเครื่อง server ตามขั้นตอนดังนี้</p>
+        <h4>ขั้นตอนที่ 1 install make โดยพิมพ์</h4>
+        <p>sudo apt-get intstall make</p>
+        <h4>ขั้นตอนที่ 2 install git และ binutils พิมพ์</h4>
+        <p>sudo apt-get -y install git binutils</p>
+        <h4>ขั้นตอนที่ 3 change directory ไปยังที่ install efs-util ไว้พิมพ์</h4>
+        <p>cd /path/efs-utils</p>
+        <h4>ขั้นตอนที่ 4 รัน batch file ชื่อ build-deb.sh โดยพิมพ์</h4>
+        <p>./build-deb.sh</p>
+        <h4>ขั้นตอนที่ 5 ทำการ install efs-utils พิมพ์</h4>
+        <p>sudo apt-get -y install ./build/amazon-efs-utils*deb </p>
+        <p>เมื่อทำครบทุกขั้นตอนแล้วให้สร้าง directory ที่จะทำการ mount drive EFS โดยพิมพ์</p>
+        <p>Sudo mkdir -p /mnt/efs</p>
+        <p>ต่อมาให้เรา copy command line สำหรับ mount โดยเลือกไปที่ EFS ที่สร้างไว้เลือก Attach แล้วทำการ copy command line มาดังรูปด้านล่าง</p>
+        <img src="img/T702/EFS/EFS3.PNG" alt="">
+        <p>จากนั้นเปลี่ยนที่อยู่ของ directory ที่เราสร้าง เมื่อ mount เสร็จแล้วทำการตรวจเช็คโดยใช้คำสั่ง df . จะปรากฏดังรูปด้านล่าง</p>
+        <img src="img/T702/EFS/EFS4.PNG" alt="">
+        <p>จากนั้นให้พิมพ์ sudo chmod 777 . เพื่อให้ upload ไฟล์ได้ จากนั้นให้ใช้ FileZilla ในการ upload ไฟล์ขึ้น server และลองดึงข้อมูลจากไฟล์ให้มาโชว์ใน efs_test.php ผลลัพธิ์จะได้ตามรูปด้านล่าง</p>
+        <img src="img/T702/EFS/EFS5.PNG" alt="">
+        <p>สรุป EFS เหมือนกับเป็น HDD ส่วนกลางให้เครื่องต่างๆที่เรามีอยู่ใน VPC เดียวกันสามารถเรียกใช้ได้</p>
+    </div>
+</body>
+</html>
