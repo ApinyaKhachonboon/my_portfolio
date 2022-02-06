@@ -420,9 +420,8 @@ html, body{
     border-radius:50%;
     border: none;
     display: none;
-  }
-  .openbtn:hover {
-    background-color: #444;
+    justify-content: center;
+    align-items: center;
   }
 
   #my_footer{
@@ -431,7 +430,7 @@ html, body{
 
   @media screen and (max-width: 750px){
     .openbtn {
-      display: block;
+      display: flex;
     }
     .left-port{
         left: 0;
@@ -467,12 +466,12 @@ html, body{
   .about_me_content{
     padding-top: 10px;
     max-width: 450px;
-    min-width: 450px;
     width: 40vw;
     text-align: center;
     color:#111;
     margin: 0 auto;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
   }
