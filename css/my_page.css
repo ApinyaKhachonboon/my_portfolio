@@ -108,6 +108,42 @@ html, body{
   }
   .js_progress_show{
     background-color:orangered;
+    width:75%;
+    height: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 50px;
+  }
+  .jq_progress_show{
+    background-color:orangered;
+    width:75%;
+    height: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 50px;
+  }
+  .git_progress_show{
+    background-color:orangered;
+    width:70%;
+    height: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 50px;
+  }
+  .az_progress_show{
+    background-color:orangered;
+    width:75%;
+    height: 15px;
+    text-align: center;
+    font-size: 0.9em;
+    color: white;
+    border-radius: 50px;
+  }
+  .css_progress_show{
+    background-color:orangered;
     width:70%;
     height: 15px;
     text-align: center;
