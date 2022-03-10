@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -29,11 +30,17 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Pac-man</h3>
-        <img src="img/pac-man/pac-man.png" alt="">
+        <img class="myImg" src="img/pac-man/pac-man.png" alt="">
         <h3>Class Diagram</h3>
-        <img src="img/pac-man/p1.PNG" alt="">
+        <img class="myImg" src="img/pac-man/p1.PNG" alt="">
         <h5>Class gameState</h5>
         <p> - เป็นคลาสสำหรับสร้าง canvas จาก tkinter ขึ้นมา และกำการกำหนดค่าเริ่มต้นต่างๆ ขึ้นมา เช่น สร้าง block จาก file txt ซึ่งเป็น map ของเกม ต่อมาสร้าง foodsmall และ foodbig หรือเป็น object ที่ทำหน้าที่เป็นอาหารของตัว player หรือ ตัว pac-man และ สร้าง ghost ที่เป็นศัตรูของ player และสั่งให้ player, ghost, foodbig ทำงานโดยผ่าน method action</p>
         <h5>Class player</h5>
@@ -49,5 +56,6 @@
         <h5>Class Point</h5>
         <p> - เป็นคลาสที่สร้างมาเพื่อ findpath โดยเฉพาะ ซึ่งจะมีตัวแปร x, y แทนตำแหน่ง isblock แทนว่าสามารถไปได้หรือไม่ isVisit คือแทนว่าได้ผ่านเส้นทางนี้ไปหรือยัง direction คือทิศทางที่ใช้ในการเคลื่อนที่ และสุดท้าย prev ไว้ชี้ point ก่อนหน้าเพื่อใช้ย้อนรอยเมื่อทำการหาเส้นทางที่สั้นที่สุดได้แล้ว </p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

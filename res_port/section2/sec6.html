@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -33,10 +34,16 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Node.js (Workshop EPT-PROPERTY)</h3>
         <h3>home</h3>
-        <img src="img/Node_js/n1.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n1.PNG" alt="node.js img">
         <p>
             Workshop นี้ใช้ node.js ในการสร้างขึ้นมาโดยใช้ร่วมกับ module ชื่อ express ซึ่งเป็น module ไว้ใช้สำหรับทำ web-site ทำให้ลดจำนวนในการเขียน code ได้มาก นอกจากนั้นยังมี ejs ช่วยในเรื่องของ template ของ web-site ทำให้ code ดูเป็นระเบียบและดูง่ายมากขึ้น นอกจากนั้นยังมีการเชื่อมต่อกับ Database จึงต้องทำการลง mysql ด้วย และสุดท้ายเพื่อให้ง่ายต่อการเขียน code และไม่ต้องทำการ connect กับ database บ่อยๆ จึงได้เลือกใช้ cookie-session มาช่วย โดย module ที่กล่าวมาทั้งหมดนั้นทำการ install ผ่าน npm โดยพิมพ์
 npm install mysql express ejs cookie-session --save 
@@ -44,50 +51,51 @@ npm install mysql express ejs cookie-session --save
 
         </p>
         <h3>property_detail</h3>
-        <img src="img/Node_js/n2.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n2.PNG" alt="node.js img">
         <p>
             โดยการมาที่หน้า property_detail นั้นจะใช้ method get โดยจะส่ง id ที่เลือกมาด้วยเพื่อจะนำค่าของ id ที่ได้นั้นไปค้นหาใน database และนำข้อมูลทั้งหมดโชว์ขึ้นมาในหน้าดังกล่าว นอกจากนั้นยังมีระบบ register ไว้สำหรับ login เพื่อเข้าจัดการข้อมูลต่างๆของตนเอง หรือลงประกาศ property โดยมี web-page ดังรูปด้านล่าง
         </p>
         <h3>register</h3>
-        <img src="img/Node_js/n3.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n3.PNG" alt="node.js img">
         <p>
             เมื่อกรอกข้อมูลสำคัญทั้งหมดเรียบร้อยและกดที่ปุ่ม Register จะปรากฏข้อความดังรูปด้านล่างและสามารถ login ได้
         </p>
-        <img src="img/Node_js/n4.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n4.PNG" alt="node.js img">
         <h3>login</h3>
-        <img src="img/Node_js/n5.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n5.PNG" alt="node.js img">
         <p>
             ทำการกรอก email และ password ที่พึ่ง register ไปในช่อง login และ password เมื่อ login สำเร็จจะไปยังหน้าของ dashboard ดังรูปด้านล่าง
         </p>
-        <img src="img/Node_js/n6.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n6.PNG" alt="node.js img">
         <p>
             ในหน้า dashboard เราจะสามารถจัดการข้อมูลต่างๆได้ โดยจะแบ่งเป็น role ซึ่งจะมี admin หรือ user ในกรณีของ user จะแก้ไขได้เฉพาะข้อมูลของตนเองได้เท่านั้น แต่ถ้าเป็น admin จะสามารถแก้ไขได้ทั้งหมด โดยความแตกต่างจะเป็นดังรูปด้านล่าง
         </p>
         <h3>dashboard/property กรณี role เป็น user</h3>
-        <img src="img/Node_js/n7.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n7.PNG" alt="node.js img">
         <p>จะไม่ปรากฏอะไรในตารางจนกว่าจะทำการ create a new property ขึ้นมา</p>
         <h3>dashboard/property กรณี role เป็น admin</h3>
-        <img src="img/Node_js/n8.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n8.PNG" alt="node.js img">
         <p>
             จะปรากฏข้อมูลของ property ใน database ทั้งหมดและสามารถทำการปรับแก้ไขได้โดยการกด edit ซึ่งจะไปยังหน้า edit พร้อมข้อมูลเดิมที่ยังไม่ได้แก้ไขดังรูปด้านล่าง
         </p>
         <h3>property/edit</h3>
-        <img src="img/Node_js/n9.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n9.PNG" alt="node.js img">
         <p>
             และเมื่อกดที่ปุ่ม create a new property จะปรากฏหน้าเหมือนกับ edit ซึ่งในหน้านี้จะเป็นการเพิ่มข้อมูลไปแทนที่จะแก้ไขดังรูปด้านล่าง ในการเพิ่มข้อมูลอสังหานั้นสามารถ upload รูปจากเครื่องผู้ใช้ไปยัง server ได้ด้วยโดยจะมีการตรวจสอบประเภทของ file ก่อนจะทำการ upload ขึ้น server โดยใช้ module multer และ fs มาช่วยจัดการ
         </p>
-        <img src="img/Node_js/n10.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n10.PNG" alt="node.js img">
         <p>
             ต่อมาจะเป็น tab ของ user ซึ่งจะเป็นกรณีเดียวกับของ property ซึ่งจะแบ่งเป็น 2 role เช่นกันโดยถ้าผู้ใช้เป็น user จะปรากฏดังรูปด้านล่างนี้ 
         </p>
         <h3>dashboard/user กรณี role เป็น user</h3>
-        <img src="img/Node_js/n11.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n11.PNG" alt="node.js img">
         <p>โดยจะปรากฏเพียงข้อมูลของผู้ใช้งานเท่านั้น แต่ถ้าเป็นกรณีผู้ใช้งานเป็น admin นั้นจะปรากฏดังนี้</p>
         <h3>dashboard/user กรณี role เป็น admin</h3>
-        <img src="img/Node_js/n12.PNG" alt="node.js img">
+        <img class="myImg" src="img/Node_js/n12.PNG" alt="node.js img">
         <p>
             ซึ่งจะปรากฏข้อมูลของผู้ใช้งานทั้งหมดแต่จะไม่สามารถทราบ password ได้เพราะทำการ hash ผ่าน sha256 เอาไว้เพื่อกันนการ hack ข้อมูลโดยผู้ไม่ประสงค์ดี และ admin จะสามารถ edit role ของผู้ใช้งานได้ด้วยโดยการเลือก role ที่ต้องการและกดปุ่ม edit  และ tab สุดท้านคือ Logout เมื่อกดจะทำการ logout และกลับสู่หน้าหลักนั้นเอง
         </p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

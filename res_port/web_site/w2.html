@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -29,20 +30,27 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Project w701</h3>
-        <img src="img/project_w701/p1.PNG" alt="">
+        <img class="myImg" src="img/project_w701/p1.PNG" alt="">
         <h5>index.html</h5>
         <p>ในหน้าแรกจะมี youtube ที่ใส่อยู่ใน tag iframe นอกนั้นเป็น tag h2 และ img ทั่วไป ส่วน menu ด้านบนเมื่อทำการ resize window จะทำการซ่อน menu เป็นแบบ Burger menu ปุ่มด้านล่างใช้ effect จาก anime.js ให้หมุน 1 รอบ</p>
-        <img src="img/project_w701/p2.PNG" alt="">
+        <img class="myImg" src="img/project_w701/p2.PNG" alt="">
         <h5>lessson.html</h5>
         <p>เมื่อคลิ๊กที่ปุ่มจะปรากฏเนื้อหาที่ถูกใส่ไว้ใน iframe และเมื่อทำการ resize window ปุ่ม menu จะเปลี่ยนค่า width : 100%</p>
-        <img src="img/project_w701/p3.PNG" alt="">
+        <img class="myImg" src="img/project_w701/p3.PNG" alt="">
         <h5>workshop.html</h5>
         <p>เมื่อคลิ๊กที่ปุ่มจะปรากฏเนื้อหาที่ถูกใส่ไว้ใน iframe เช่นเดียวกับหน้า lesson.html ซึ่งด้านในจะเป็นเนื้อหา workshop ของ course ดังกล่าว</p>
-        <img src="img/project_w701/p4.PNG" alt="">
+        <img class="myImg" src="img/project_w701/p4.PNG" alt="">
         <h5>about_us.html</h5>
         <p>ในหน้านี้จะมี google map api javascript ซึ่งเป็นบริการของ google ตามปกติแล้วจะ show map ให้เห็นชัดเจนแต่เนื่องจาก ผู้เขียนได้ทำการลบ key เพื่อป้องกันการเก็บเงินของ google จึงขึ้นว่า for devolop ตามรูปที่เห็น</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

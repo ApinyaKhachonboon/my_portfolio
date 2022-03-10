@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -21,27 +22,33 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>HTML</h3>
         <p>HTML (Hypertext Markup Language) คือภาษาสำคัญในการสร้าง Web Site  ซึ่งจะแสดงผลผ่าน Web Browser ในตัว HTML นั้นจะประกอบด้วย tag หลายรูปแบบให้เลือกใช้มากมายให้เหมาะกับความต้องการ ในที่นี้จะยกตัวอย่าง tag ที่ใช้บ่อยพร้อมคำอธิบายบางส่วน</p>
-        <img src="img/html/01.PNG" alt="">
+        <img class="myImg" src="img/html/01.PNG" alt="">
         <p>รูปด้านบนจะเป็นรูปแบบมาตรฐานของ HTML5 ซึ่งจะมี tag html และด้านในประกอบไปด้วย head ซึ่งเอาไว้ใส่เกี่ยวกับการคำนวณเช่นใส่ tag script สำหรับ JavaScript หรือ CSS ซึ่งเป็นภาษาเอาไว้จัดแต่งรูปร่างความสวยงามของแต่ละ Element ต่อมาเป็น body ด้านในนี้จะเอาไว้ใส่ tag ที่เอาไว้แสดงผลบนเว็บ browser ซึ่ง tag ที่ใช้บ่อยๆโดยทั่วไปนั้นมี</p>
-        <p>Tag h1 – h6 คือ tag ที่ไว้แสดงหัวข้อต่างจะมีขนาดตั้งแต่ 1 – 6</p>
-        <img src="img/html/02.PNG" alt="">
+        <p>Tag h1 - h6 คือ tag ที่ไว้แสดงหัวข้อต่างจะมีขนาดตั้งแต่ 1 - 6</p>
+        <img class="myImg" src="img/html/02.PNG" alt="">
         <p>นี่คือผลลัพธิ์ที่ได้จาก tag h1-h6</p>
-        <img src="img/html/03.PNG" alt="">
+        <img class="myImg" src="img/html/03.PNG" alt="">
         <p>Tag p คือ tag ที่เอาไว้แบ่ง Paragraph  ในกรณีต้องการแบ่ง Paragraph</p>
-        <img src="img/html/04.PNG" alt="">
+        <img class="myImg" src="img/html/04.PNG" alt="">
         <p>ผลลัพธิ์ที่ได้จาก tag p</p>
-        <img src="img/html/05.PNG" alt="">
+        <img class="myImg" src="img/html/05.PNG" alt="">
         <p>Tag a คือ tag ไว้ทำหน้าที่ link ไปยัง page หรือ web site อื่นๆที่ต้องการ</p>
-        <img src="img/html/06.PNG" alt="">
+        <img class="myImg" src="img/html/06.PNG" alt="">
         <p>ผลัพธิ์ที่ได้คือเมื่อทำการคลิ๊กที่ my_link ก็จะนำไปสู่หน้า page test01.html ที่ได้ใส่ไว้นั่นเอง</p>
-        <img src="img/html/07.PNG" alt="">
+        <img class="myImg" src="img/html/07.PNG" alt="">
         <p>Tag div คือ tag ที่สำคัญและใช้บ่อยมากไว้สำหรับแบ่ง content เป็นส่วนๆ ดั่งตัวอย่างด้านล่าง</p>
-        <img src="img/html/08.PNG" alt="">
+        <img class="myImg" src="img/html/08.PNG" alt="">
         <p>ผลลัพธิ์ที่ได้จะเห็นได้ว่า content ได้ถูกแบ่งเป็น 3 ส่วนตาม div ที่เราได้กำหนดเอาไว้</p>
-        <img src="img/html/09.PNG" alt="">
+        <img class="myImg" src="img/html/09.PNG" alt="">
         <p>ต่อมาเป็น tag form คือ tag ที่เอาไว้เก็บข้อมูลต่างๆ เพื่อเอาไว้ส่งแบบฟอร์มไปยังเครื่อง server เพื่อทำการเก็บข้อมูลอีกทีซึ่งสามารถเซ็ต action หรือรูปแบบการส่งได้ 2 แบบคือ GET และ POST โดยทั่วไปจะนิยมการส่งแบบ POST มากกว่าเพราะปลอดภัยและสามารถส่งจำนวนข้อมูลได้มากกว่าแบบ GET ซึ่งด้านใน tag form เราสามรถใส่ tag input ต่างๆเพื่อให้ผู้ใส่กรอกข้อมูลที่เราต้องการใส่ลงไปได้ซึ่งจะมี type คล่าวๆดังนี้</p>
         <p> - text คือ กล่องที่ไว้เก็บข้อความต่างๆ</p>
         <p> - checkbox คือ กล่องตัวเลือกจะมีเครื่องหมายถูกหน้า value ที่ผู้ใช้เลือก</p>
@@ -53,9 +60,10 @@
         <p><a href="https://www.w3schools.com/">https://www.w3schools.com/</a></p>
         <p><a href="https://developer.mozilla.org/en-US/">https://developer.mozilla.org/en-US/</a></p>
         <p>รูปด้านล่างคือตัวอย่าง tag ต่างๆที่กล่าวตล่าวไว้ด้านบน</p>
-        <img src="img/html/10.PNG" alt="">
+        <img class="myImg" src="img/html/10.PNG" alt="">
         <p>ตัวอย่างผลลัพธิ์จากโค้ดด้านบน</p>
-        <img src="img/html/11.PNG" alt="">
+        <img class="myImg" src="img/html/11.PNG" alt="">
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

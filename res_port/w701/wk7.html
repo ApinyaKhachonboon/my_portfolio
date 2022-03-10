@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -22,27 +23,34 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Google Map API</h3>
         <p>Google map API คือการเรียกใช้บริการ Google map ผ่าน Google map API โดยขั้นตอนแรกนั้นต้องไปที่ url <a href="https://console.cloud.google.com/">https://console.cloud.google.com/</a>  ก่อนถ้ายังไม่มี gmail ให้ทำการสมัครให้เรียบร้อยต่อมาเข้ามาที่หน้า home และทำการ new project ขึ้นมาหากยังไม่มี เมื่อสร้าง project เรียบร้อยจะปรากฏดังรูปด้านล่าง</p>
-        <img src="img/googleMap/gm01.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm01.PNG" alt="">
         <p>เสร็จแล้วให้เลือก project พึ่งสร้าง เลือก open จากนั้นกดที่แถบ navigation menu เลื่อนลงมาจนกว่าจะเจอ Google Maps Platform แล้วเลือกที่ APIs ต่อมาให้เลือกที่ Maps JavaScript API เนื่องจากเราต้องการใช้เป็นแบบ JavaScript สำหรับ website </p>
-        <img src="img/googleMap/gm03.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm03.PNG" alt="">
         <p>ต่อมาให้เลือก Enable และรอจนกว่าจะเสร็จ</p>
-        <img src="img/googleMap/gm04.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm04.PNG" alt="">
         <p>เมื่อเสร็จแล้วให้เราเลือกที่ navigation > Google Maps Platform อีกครั้งแต่คราวนี้เลือกไปที่ Credentials เพื่อทำการ generate key สำหรับ google map </p>
-        <img src="img/googleMap/gm05.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm05.PNG" alt="">
         <p>หลังจากนั้นให้เลือกที่ Credentials in APIs & Services เพื่อทำการเริ่มสร้าง key</p>
-        <img src="img/googleMap/gm06.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm06.PNG" alt="">
         <p>เลือก CREATE CREDENTIALS > APIs Key จะได้รับ Key ตามรูปด้านล่าง </p>
-        <img src="img/googleMap/gm07.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm07.PNG" alt="">
         <p>ต่อมาเราจะทำการทดสอบใช้ google map โดยให้แสดงในลักษณะการปักหมุดในแผนที่ โดยไปที่ url ด้านล่าง  https://developers.google.com/maps/documentation/javascript/examples/map-latlng-literal เพื่อไปดู example code และทำการ copy แถบที่เป็น JavaScript และ HTML ทำการแก้ไข lat, lng ที่ต้องการ เปลี่ยนให้เป็นภาษาไทยและทำการวาง API เราพึ่งสร้างเข้าไปใน code</p>
-        <img src="img/googleMap/gm08.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm08.PNG" alt="">
         <p>รูปด้านบนคือ code ตัวอย่าง JavaScript ที่ต้อง copy ไปวางที่ project ที่เราต้องการ</p>
-        <img src="img/googleMap/gm09.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm09.PNG" alt="">
         <p>รูปด้านบนคือ code ตัวอย่าง HTML ที่ต้อง copy ไปวางที่ project ที่เราต้องการ</p>
-        <img src="img/googleMap/gm10.PNG" alt="">
+        <img class="myImg" src="img/googleMap/gm10.PNG" alt="">
         <p>ด้านบนคือผลลัพธิ์ที่เราทำการทดสอบ ซึ่งได้ปรากฏสถานที่ที่เราปักหมุดไว้ถูกต้อง</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

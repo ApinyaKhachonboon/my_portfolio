@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -22,14 +23,21 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Workshop Real Estate</h3>
-        <img src="img/work_real_estate/re01.PNG" alt="">
+        <img class="myImg" src="img/work_real_estate/re01.PNG" alt="">
         <p>ทดลองทำ web site ซื้อ ขาย อสังหา ในส่วนแรกจะมี animation ทำให้ div หมุน 1 รอบโดยใช้ anime.js ส่วนด้านบนเมนูสร้างโดย div>ul>li และจัด float left-right ต่อมาส่วนของการ search ใช้เป็น form เมื่อกด click search จะนำค่าจาก input text ไปค้นหาข้อมูลที่ต้องการหา โดยจะใช้ ajax จึงไม่จำเป็นต้องโหลดหน้า web ใหม่โดยทำการ get json จาก url อื่นโดยใช้ jquery จากนั้นนำข้อมูลที่ได้ ใส่ใน template และนำไป append ในอีก div </p>
-        <img src="img/work_real_estate/re02.PNG" alt="">
+        <img class="myImg" src="img/work_real_estate/re02.PNG" alt="">
         <p>ภาพด้านบนคือผลลัพธิ์ที่ได้และนอกจากนี้ยังมีลักษณะ responsive อีกด้วยและได้ใช้ anime.js เพื่อใช้การแสดง animation เมื่อ scroll ถึงในตำแหน่งที่ div แสดง tile ที่ search  นอกจากนี้ยังสามารถกดที่แสดงรายละเอียดเพื่อ show ข้อมูลในแต่ละ tile พร้อมด้วยแสดง google map ด้านล่างด้วยโดยเมื่อ click ที่แสดงรายละเอียดจะเอาข้อมูลจาก tile ใส่ไว้ในค่า lat, lng ของ google map</p>
-        <img src="img/work_real_estate/re03.PNG" alt="">
+        <img class="myImg" src="img/work_real_estate/re03.PNG" alt="">
         <p>รูปด้านบนคือผลลัพธิ์ที่ได้ ซึ่งจะเห็นว่ามีข้อมูลจาก tile ที่กดและยังแสดงภาพด้านในด้วย นอกจากนี้เมื่อลองเช็คสถาที่ในgoogle map แล้วปรากฏว่าถูกต้อง</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

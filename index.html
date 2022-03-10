@@ -36,6 +36,12 @@
             </div>
           </nav>
     </header>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+  </div>
     <section class="contents">
         <div class="left">
           <div class="skill">
@@ -76,7 +82,11 @@
               </div>
               <p>PHP</p>
               <div class="progress">
-                <div class="php_progress_show">70%</div>
+                <div class="php_progress_show">75%</div>
+              </div>
+              <p>Laravel</p>
+              <div class="progress">
+                <div class="laravel_progress_show">75%</div>
               </div>
               <p>Node.js</p>
               <div class="progress">
@@ -163,12 +173,12 @@
             <div class="my_hacker">
               <h3><i class="fas fa-code"></i> Hacker Rank // @apinya_khachonb1</h3>
               <div class="contain_cerificate">
-                <img src="img/cerificate/java.png" alt="" class="my_hacker_info">
-                <img src="img/cerificate/python.png" alt="" class="my_hacker_info">
-                <img src="img/cerificate/ps.png" alt="" class="my_hacker_info">
-                <img src="img/cerificate/sql.png" alt="" class="my_hacker_info">
-                <img src="img/cerificate/sql_inter.png" alt="" class="my_hacker_info">
-                <img src="img/cerificate/js.png" alt="" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/java.png" alt="java.png" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/python.png" alt="python.png" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/ps.png" alt="ps.png" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/sql.png" alt="sql.png" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/sql_inter.png" alt="sql_inter.png" class="my_hacker_info">
+                <img class="cerImg" src="img/cerificate/js.png" alt="js.png" class="my_hacker_info">
               </div>
             </div>
           </div>
@@ -201,10 +211,36 @@
         mybutton.style.display = "none";
       }
     }
-      function go_to_top(){
+    function go_to_top(){
         $('html, body').animate({
             scrollTop: 0
         }, 200);
+    }
+
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementsByClassName("cerImg");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+
+    for (var i=0;i<img.length; i++) {
+        img[i].onclick  = function(){
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+          }
+    }
+
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
     }
     </script>
 </body>

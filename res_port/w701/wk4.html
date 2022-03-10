@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -21,19 +22,26 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>jQuery</h3>
         <p>jQuery จะมีทุกอย่างที่เหมือนกับ JavaScript เนื่องจาก JavaScript เป็นภาษาที่ค่อนข้างใช้ยากจึงมี jQuery มาจัดการในเรื่องนี้ ซึ่งถ้าหากเราต้องการจะใช้ jQuery จำเป็นจะต้องไป Download ที่ web site <a href="https://jquery.com/download/">https://jquery.com/download/</a> แล้วคลิ๊ก link ตามรูปภาพด้านล่าง</p>
-        <img src="img/jquery/jq01.PNG" alt="">
+        <img class="myImg" src="img/jquery/jq01.PNG" alt="">
         <p>เมื่อโหลดเสร็จให้ทำการ unzip และเอาไว้ใน project ที่จะใช้จากนั้นให้ทำการทดสอบโดยการลอง import jQuery ที่พึ่งโหลดมาโดยนำ path ที่อยู่มาใส่ใน tag script src ดังรูปด้านล่าง</p>
-        <img src="img/jquery/jq02.PNG" alt="">
+        <img class="myImg" src="img/jquery/jq02.PNG" alt="">
         <p>โค้ดด้านบนเป็นการทดสอบ jQuery โดยให้ไปแสดงผลใน div class testj ซึ่งในการทำแบบนี้ใน JavaScript จำเป็นจะต้องมีโค้ดเยอะกว่านี้ แต่สำหรับ jQuery สามารถจบในบรรทัดเดียวและได้ผลลัพธิ์ตามรูปด้านล่าง</p>
-        <img src="img/jquery/jq03.PNG" alt="">
+        <img class="myImg" src="img/jquery/jq03.PNG" alt="">
         <p>ซึ่งแสดงผลได้ถูกต้องต่อมาเราจะทดสอบโดยการ get json โดยใช้ jQuery โดยการนำข้อมูลจาก web site อื่นมาแสดงข้อมูลใน page ของเราโดยไม่ต้องโหลดหน้า page ใหม่หรือเรียกว่า Ajax</p>
-        <img src="img/jquery/jq04.PNG" alt="">
+        <img class="myImg" src="img/jquery/jq04.PNG" alt="">
         <p>ในโค้ดด้านบนคือการดึงข้อมูล json จาก url อื่นที่เป็น file.php ซึ่งจะตอบกลับมาเป็น json โดยใช้ function getJSON ของ jQuery จากนั้นข้อมูลจะถูกเก็บไว้ในตัวแปร data ต่อมาทำการวนลูปในแต่ละ key พร้อมกับใส่ tag html ในที่นี้ได้ใส่เป็น tag table, tr, td เพื่อความสะดวกในการทดสอบจากนั้นก็ทำการ append ลงไปใน div main</p>
-        <img src="img/jquery/jq05.PNG" alt="">
+        <img class="myImg" src="img/jquery/jq05.PNG" alt="">
         <p>ผลลัพธิ์ที่ได้จะปรากฏข้อมูลที่ดึงมาในรูปแบบของตารางด้านซ้ายคือ key และด้านขวาคือ value</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

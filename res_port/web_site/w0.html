@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
             text-align: center;
         }
+
         .my_content p{
             text-align: justify;
             padding-left: 40px;
@@ -26,14 +28,21 @@
             max-width: 400px;
             max-height: 800px;
         }
+
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Web-game (Bomberman)</h3>
-        <img src="img/bomberman/bb1.png" alt="">
+        <img class="myImg" src="img/bomberman/bb1.png" alt="bb1.png">
         <h3>Class Diagram</h3>
-        <img src="img/bomberman/bb2" alt="">
+        <img class="myImg" src="img/bomberman/bb2.png" alt="bb2.png">
         <h5>game.html </h5>
         <p>เป็นไฟล์ main หลักของเกม ซึ่งจะทำการ Import Class Block, Bomb, BreakBlock, Enemy, Item, Player อีกทีเพื่อนำแต่ละ Object มาวาดลงใน canvas ด้วย Method เช่น createBlock, createBreakBlock ใช้วาดลงในตำแหน่งที่ต้องการ เพื่อใช้ในการ Genarate map ขึ้นมา นอกจากนี้ยังมี Method keyDownHandler ใช้ในการดักคีย์ที่ต้องการใช้ในการเล่นเกม นอกจากนี้ยังมี method ต่างๆที่เกี่ยวกับกลไกของเกม เช่น canPlant ทำหน้าที่เช็คว่าระเบิดเกินจำนวนที่กำหนดหรือยัง และคำนวณให้วางตรงกับช่องพอดีด้วย สุดท้าย Method draw ทำหน้าที่ update แต่ละ frame เพื่อให้เกิด animation ขึ้นมาโดยมี Method built in ที่เรียกตัวเองซ้ำๆชื่อ  requestAnimationFrame</p>
         <h5>player.js</h5>
@@ -49,5 +58,6 @@
         <h5>block.js</h5>
         <p>มีทุกอย่างที่เหมือนกับ breakblock แต่ไม่สามารถถูกทำลายได้</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

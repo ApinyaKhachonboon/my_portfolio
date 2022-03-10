@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -29,15 +30,22 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>    
     <div class="my_content">
         <h3>เกม Tic tac toe (EV9)</h3>  
-        <img src="img/EV9/ClassDiagram.jpg" alt="">
+        <img class="myImg" src="img/EV9/ClassDiagram.jpg" alt="">
         <h3>Class diagram</h3>
-        <img src="img/EV9/ev9_p1.PNG" alt="">
+        <img class="myImg" src="img/EV9/ev9_p1.PNG" alt="">
         <h5>Class EV9</h5>
         <p> - เมื่อถูกเรียกใช้จะแสดง GUI โดยการสร้าง Ratio, Button และ Tile ขนาด 3*3 ขึ้นมาเมื่อ click OK จะเป็นการเริ่มเกมโดยจะมี Method robot() มาเล่นสลับกับผู้เล่น พร้อมกับ Method checkWin() และ checkDraw() ว่าเกมจบลงอย่างไร</p>
         <h5>Class Tile</h5>
         <p> - จะถูก Class EV9 เรียกใช้อีกทีซึ่งด้านในจะมี Attribute เกี่ยวกับสีและ String ที่โชว์ว่าเป็นของฝั่ง X หรือ O และในกรณีที่มีฝั่งใดฝั่งหนึ่งชนะก็จะเปลี่ยน Background เป็นสีเหลืองเพื่อให้ดูง่ายขึ้น</p>
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

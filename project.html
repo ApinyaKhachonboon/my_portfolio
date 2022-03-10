@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="right-port">
-          <div class="information-port">
+          <div class="information-port" id="section-content">
             <iframe id="my_iframe" class="information-port" width="100%" height="100%" src="" frameborder="0" onLoad=""></iframe>
           </div>
         </div>
@@ -103,21 +103,16 @@
           menu_port.style.width = "250px";
         }
       }
-      else{
-        if(document.body.offsetWidth < 750){
-          menu_port.style.width = "0px";
-        }
-      }
     }
 
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "flex";
-        left_port.style.top = "0px";
+        //left_port.style.top = "0px";
       } else {
         mybutton.style.display = "none";
-        let h = my_nav.offsetHeight;
-        left_port.style.top = h+"px";
+        //let h = my_nav.offsetHeight;
+        //left_port.style.top = h+"px";
       }
     }
 
@@ -139,6 +134,7 @@
         $(this).removeClass("menu_activate");
       });
       $("#"+id).addClass("menu_activate");
+      //$("#section-content").html('<object width=100% height=100% type="text/html" data="res_port/'+my_type+'/'+id+'.html" ></object>');
       $("#my_iframe").attr("src", "res_port/"+my_type+"/"+id+".html");
       
     }

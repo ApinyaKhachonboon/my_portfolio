@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -29,32 +30,39 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Auto scaling</h3>
         <p>Auto scaling คือ บริการของ Amazon ในกรณีที่เครื่อง server ของเรามีคนใช้มากเกินกว่าปกติ server จะทำการเพิ่มขนาดเองโดยอัตโนนมัติ และ ในกรณีที่ server ของเราเสียหายก็สามารถสร้างใหม่ให้ด้วยเราจะมาลองในกรณีที่ 2 กัน ขั้นแรกไปที่ EC2 เลื่อนลงมาจะเจอ Auto Scaling คลิ๊กที่ Launch Configuration จากนั้นกด create configuration </p>
-        <img src="img/T702/auto_scaling/a1.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a1.PNG" alt="">
         <p>ต่อมาให้ตั้งชื่อ Auto scaling ตามด้วยเลือก AMI Image ที่ต้องการ</p>
-        <img src="img/T702/auto_scaling/a2.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a2.PNG" alt="">
         <p>ต่อไปให้เลือก Security group ให้ตรงกับเครื่อง ที่เราเลือก Image ไว้</p>
-        <img src="img/T702/auto_scaling/a3.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a3.PNG" alt="">
         <p>จากนั้นเลือก key pair จะเอาอันเดิมหรือจะสร้างใหม่ก็ได้เสร็จแล้วให้กด create launch configuration เมื่อเสร็จแล้วให้เราเลือก launch configuration ที่เรา create มาจากนั้นไปที่ Action->create scaling group ต่อมาให้ตั้งชื่อที่ต้องการ เสร็จแล้วกด next</p>
-        <img src="img/T702/auto_scaling/a5.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a5.PNG" alt="">
         <p>ต่อมาให้เลือก VPC และ sub-net เสร็จแล้วกด next</p>
-        <img src="img/T702/auto_scaling/a6.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a6.PNG" alt="">
         <p>ต่อมาให้เลือก load balancer ที่มีอยู่เสร็จแล้วกด next</p>
-        <img src="img/T702/auto_scaling/a7.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a7.PNG" alt="">
         <p>เลือก min capacity เป็น 1 max capacity เป็น 10 scaling policies เลือกเป็น none เสร็จแล้วให้กด next จนกว่าจะสร้างสำเร็จ</p>
-        <img src="img/T702/auto_scaling/a8.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a8.PNG" alt="">
         <p>เสร็จแล้วกลับไปที่ EC2 จะเห็นว่ามี Instance สร้างมาใหม่ 1 เครื่อง</p>
-        <img src="img/T702/auto_scaling/a10.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a10.PNG" alt="">
         <p>ต่อมาได้ทดลองเข้าผ่าน load balancer สร้างไว้ได้ผลลัพธิ์ตามภาพด้านล่างหลังจากนั้นจะทดลองลบ Instance ดังกล่าวทดสอบดูว่าจะมีการสร้าง instance ใหม่ให้หรือไม่</p>
-        <img src="img/T702/auto_scaling/a11.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a11.PNG" alt="">
         <p>เมื่อกดลบแล้วลองเข้าทาง load balancer จะเห็นว่าเครื่องได้ถูกลบไปแล้ว</p>
-        <img src="img/T702/auto_scaling/a12.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a12.PNG" alt="">
         <p>หลังจากนั้นไม่นานจะเห็นว่ามี Instance ใหม่ถูกสร้างขึ้นมาแทนที่</p>
-        <img src="img/T702/auto_scaling/a13.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a13.PNG" alt="">
         <p>รอจนเสร็จแล้วทำการเข้าไปที่ IPv4 ของ load balancer เดิมจะได้ผลลัพธ์ดังนี้ ซึ่งจะเห็นได้ว่า Instance ที่ถูกสร้างใหม่ได้ทำการเชื่อมต่อกับ Load balance เดิมเรียบร้อย</p>
-        <img src="img/T702/auto_scaling/a14.PNG" alt="">
+        <img class="myImg" src="img/T702/auto_scaling/a14.PNG" alt="">
     </div>
+    <script src="../js/res_port.js"></script>
 </body>
 </html>

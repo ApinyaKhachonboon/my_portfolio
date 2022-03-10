@@ -121,21 +121,16 @@
           menu_port.style.width = "250px";
         }
       }
-      else{
-        if(document.body.offsetWidth < 750){
-          menu_port.style.width = "0px";
-        }
-      }
     }
 
     function scrollFunction() {
       if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         mybutton.style.display = "flex";
-        left_port.style.top = "0px";
+        //left_port.style.top = "0px";
       } else {
         mybutton.style.display = "none";
         let h = my_nav.offsetHeight;
-        left_port.style.top = h+"px";
+        //left_port.style.top = h+"px";
       }
     }
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/res_port.css">
     <title>Document</title>
     <style>
         .my_content{
@@ -28,11 +29,17 @@
     </style>
 </head>
 <body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div class="my_content">
         <h3>Ms-Paint (FinalMsPaint)</h3>
         <h3>Class diagram</h3>
-        <img src="img/Ms_paint/class_diagram.jpg" alt="">
-        <img src="img/Ms_paint/ms_paint.PNG" alt="">
+        <img class="myImg" src="img/Ms_paint/class_diagram.jpg" alt="">
+        <img class="myImg" src="img/Ms_paint/ms_paint.PNG" alt="">
         <h5>ใช้การเขียนแบบ OOP </h5>
         <h5>Class MS_PAINT_GUI ทำหน้าที่แสดงผล เครื่องมือต่างๆของโปรแกรม ดังต่อไปนี้</h5>
         <p> - ปุ่ม File ใช้ JMenu ในการสร้าง เมื่อ click จะมีปุ่ม save และ load แสดงขึ้น</p>
@@ -60,7 +67,7 @@
         <p> - ไว้สำหรับปรับขนาดและสีของพู่กันรูปทรงเป็นวงกลม</p>
         <h5>Class Eraser</h5>
         <p> - ทำหน้าที่เหมือนยางลบไว้ลบสิ่งที่ไม่ต้องการออกจากหน้าของ BlankArea สามารถเปลี่ยนสีได้ตามต้องการ</p>
-
+        <script src="../js/res_port.js"></script>
     </div>
 </body>
 </html>
