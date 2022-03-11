@@ -29,7 +29,7 @@ var span = document.getElementsByClassName("close")[0];
 //   modal.style.display = "none";
 // }
 
-window.addEventListener("click", function(event){
+addEventListener("click", function(event){
   if(event.target != modalImg && modal.style.display == "block")
   {
     if(isClose)
