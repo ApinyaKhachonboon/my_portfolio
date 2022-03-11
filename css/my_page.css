@@ -31,8 +31,8 @@
   
   /* Modal Content (image) */
   .modal-content {
-    margin: auto;
     display: block;
+    margin: auto;
     width: 80%;
     max-width: 700px;
   }
