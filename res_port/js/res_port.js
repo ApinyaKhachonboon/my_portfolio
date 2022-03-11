@@ -6,6 +6,9 @@ var img = document.getElementsByClassName("myImg");
 var modalImg = document.getElementById("img01");
 let isClose = true;
 
+var body = document.getElementsByTagName("BODY")[0];
+body.setAttribute("onclick", "handleClick(event)");
+
 
 for (var i=0;i<img.length; i++) {
     img[i].onclick  = function(){
@@ -29,7 +32,7 @@ var span = document.getElementsByClassName("close")[0];
 //   modal.style.display = "none";
 // }
 
-addEventListener("click", function(event){
+function handleClick(event){
   if(event.target != modalImg && modal.style.display == "block")
   {
     if(isClose)
@@ -40,4 +43,4 @@ addEventListener("click", function(event){
     modal.style.display = "none";
     isClose = true;
   }
-});
+}
