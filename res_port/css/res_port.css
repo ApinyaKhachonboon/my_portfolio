@@ -3,6 +3,9 @@
   cursor: zoom-in;
   transition: 0.3s;
   width: 100%;
+  max-width: 500px;
+  object-fit: contain;
+  aspect-ratio: 4/3;
 }
 
 iframe {
@@ -33,8 +36,10 @@ iframe {
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
+  width: 100%;
   max-width: 700px;
+  object-fit: contain;
+  aspect-ratio: 4/3;
 }
 
 /* Caption of Modal Image */

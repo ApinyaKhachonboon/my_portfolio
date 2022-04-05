@@ -134,7 +134,8 @@
   .myImg {
     margin: 0 auto;
     margin-top: 20px;
-
+    object-fit: contain;
+    aspect-ratio: 4/3;
   }
 
   .person_img {
